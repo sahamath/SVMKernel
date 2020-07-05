@@ -22,21 +22,23 @@ def load_csv(path):
     return aapl
 
 
-def get_exp_preprocessing(df, alpha=0.9):
+def get_exp_preprocessing(data_f, alpha=0.9):
     """
 		Returns the smoothened dataframe (exponentially weighted moving average)
 		Args:
 		df: the pandas dataframe
 		alpha: smoothing factor
 	"""
+    df = data_f.copy()
     edata = df.ewm(alpha=alpha).mean()
     return edata
 
 
-def feature_extraction(data):
+def feature_extraction(data_arg):
     """
 		Extracts the important features necessary for classification
 	"""
+    data = data_arg.copy()
     for x in [5, 14, 26, 44, 66]:
         data = ta.relative_strength_index(data, n=x)
         data = ta.stochastic_oscillator_d(data, n=x)
@@ -75,11 +77,10 @@ def compute_prediction_int(df, n):
     return pred.astype(int)
 
 
-def prepare_data(path, horizon, alpha=0.9):
+def prepare_data(data_f, horizon, alpha=0.9):
 
-    aapl = load_csv(path)
+    aapl = data_f.copy()
     saapl = get_exp_preprocessing(aapl, alpha)
-
     data = feature_extraction(saapl).dropna().iloc[:-horizon]
     data["pred"] = compute_prediction_int(data, n=horizon)
     del data["Close"]

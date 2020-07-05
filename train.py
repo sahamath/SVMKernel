@@ -17,63 +17,9 @@ from sklearn.model_selection import train_test_split
 
 import argparse
 
-from preprocess import prepare_data
+from preprocess import prepare_data, load_csv
 
 import time
-
-
-parser = argparse.ArgumentParser()
-
-parser.add_argument(
-    "--path", type=str, default="dataset/^NSEI (3).csv", help="path of csv file"
-)
-
-parser.add_argument(
-    "--reduce_data",
-    type=int,
-    default=3000,
-    help="Number of samples to take from csv file",
-)
-
-parser.add_argument(
-    "--kernel",
-    type=str,
-    default="rbf",
-    help="the kernel for SVM",
-    choices=["linear", "rbf", "poly", "custom"],
-)
-
-parser.add_argument(
-    "--degree", type=int, default=3, help="value of p in polynomial/custom kernel"
-)
-
-parser.add_argument(
-    "--C", type=float, default=1.0, help="the regularisation parameter for SVM"
-)
-
-parser.add_argument(
-    "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
-)
-
-
-args = parser.parse_args()
-path = args.path
-reduce_data = args.reduce_data
-kernel = args.kernel
-degree = args.degree
-C = args.C
-coef0 = args.coef0
-
-
-data = prepare_data(path=path, horizon=10, alpha=0.9)
-
-y = data["pred"]
-y = y[:reduce_data]
-# remove the output from the input
-features = [x for x in data.columns if x not in ["gain", "pred"]]
-X = data[features][:reduce_data]
-
-X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 
 def compute_acc(clf, X_train, y_train, X_test, y_test):
@@ -113,19 +59,85 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
     return [training_acc, test_acc]
 
 
-t0 = time.time()
-
-
 def custom_kernel(X, Y):
     return 1 / (1 + np.dot(X, Y.T) ** degree)
 
 
-if kernel == "custom":
-    clf = SVC(kernel=custom_kernel, C=C, coef0=coef0)
-else:
-    clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0)
+def main():
+    parser = argparse.ArgumentParser()
 
-clf.fit(X_train, y_train)
+    parser.add_argument(
+        "--path", type=str, default="dataset/^NSEI (3).csv", help="path of csv file"
+    )
 
-print("Time taken: " + str((time.time() - t0) / 60) + " minutes")
-compute_acc(clf, X_train, y_train, X_test, y_test)
+    parser.add_argument(
+        "--no_of_subsamples",
+        type=int,
+        default=2,
+        help="Number of samples to take from csv file",
+    )
+
+    parser.add_argument(
+        "--kernel",
+        type=str,
+        default="rbf",
+        help="the kernel for SVM",
+        choices=["linear", "rbf", "poly", "custom"],
+    )
+
+    parser.add_argument(
+        "--degree", type=int, default=3, help="value of p in polynomial/custom kernel"
+    )
+
+    parser.add_argument(
+        "--C", type=float, default=1.0, help="the regularisation parameter for SVM"
+    )
+
+    parser.add_argument(
+        "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
+    )
+
+    args = parser.parse_args()
+    path = args.path
+    no_of_subsamples = args.no_of_subsamples
+    kernel = args.kernel
+    degree = args.degree
+    C = args.C
+    coef0 = args.coef0
+
+    data_f = load_csv(path)
+    df_subsamples = np.array_split(data_f, no_of_subsamples)
+
+    for df_c in df_subsamples:
+
+        df = df_c.copy()
+
+        data = prepare_data(data_f=df, horizon=10, alpha=0.9)
+
+        y = data["pred"]
+
+        # remove the output from the input
+        features = [x for x in data.columns if x not in ["gain", "pred"]]
+        X = data[features]
+
+        X_train = X[: int(0.75 * len(X))]
+        y_train = y[: int(0.75 * len(y))]
+
+        X_test = X[int(0.75 * len(X)) :]
+        y_test = y[int(0.75 * len(y)) :]
+
+        t0 = time.time()
+
+        if kernel == "custom":
+            clf = SVC(kernel=custom_kernel, C=C, coef0=coef0)
+        else:
+            clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0)
+
+        clf.fit(X_train, y_train)
+
+        print("Time taken: " + str((time.time() - t0) / 60) + " minutes")
+        compute_acc(clf, X_train, y_train, X_test, y_test)
+
+
+if __name__ == "__main__":
+    main()
