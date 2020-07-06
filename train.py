@@ -13,13 +13,14 @@ from sklearn.metrics import (
     recall_score,
     accuracy_score,
 )
-from sklearn.model_selection import train_test_split
 
 import argparse
 
 from preprocess import prepare_data, load_csv
 
 import time
+
+from tqdm.auto import tqdm
 
 
 def compute_acc(clf, X_train, y_train, X_test, y_test):
@@ -33,30 +34,35 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
     training_f1 = f1_score(y_train_label, y_train_pred)
     training_confusion_matrix = confusion_matrix(y_train_label, y_train_pred)
 
-    print("Training Accuracy: " + str(training_acc))
-    print("Training Precision Score: " + str(training_prec))
-    print("Training Recall Score: " + str(training_recall))
-    print("Training F1 Score: " + str(training_f1))
-    print("Training Confusion Matrix:\n " + str(training_confusion_matrix))
-
-    print("\n\n")
+    """
+	print("Training Accuracy: " + str(training_acc))
+	print("Training Precision Score: " + str(training_prec))
+	print("Training Recall Score: " + str(training_recall))
+	print("Training F1 Score: " + str(training_f1))
+	print("Training Confusion Matrix:\n " + str(training_confusion_matrix))
+	"""
 
     # predictions on test set
     y_test_pred = clf.predict(X_test)
     y_test_label = np.array(y_test)
-    test_acc = accuracy_score(y_test_label, y_test_pred)
-    test_prec = precision_score(y_test_label, y_test_pred)
-    test_recall = recall_score(y_test_label, y_test_pred)
-    test_f1 = f1_score(y_test_label, y_test_pred)
-    test_confusion_matrix = confusion_matrix(y_test_label, y_test_pred)
+    test_set_acc = accuracy_score(y_test_label, y_test_pred)
+    test_set_prec = precision_score(y_test_label, y_test_pred)
+    test_set_recall = recall_score(y_test_label, y_test_pred)
+    test_set_f1 = f1_score(y_test_label, y_test_pred)
+    test_set_confusion_matrix = confusion_matrix(y_test_label, y_test_pred)
 
-    print("Test Accuracy: " + str(test_acc))
-    print("Test Precision Score: " + str(test_prec))
-    print("Test Recall Score: " + str(test_recall))
-    print("Test F1 Score: " + str(test_f1))
-    print("Test Confusion Matrix:\n " + str(test_confusion_matrix))
+    """
+	print("Test Accuracy: " + str(test_acc))
+	print("Test Precision Score: " + str(test_prec))
+	print("Test Recall Score: " + str(test_recall))
+	print("Test F1 Score: " + str(test_f1))
+	print("Test Confusion Matrix:\n " + str(test_confusion_matrix))
+	"""
 
-    return [training_acc, test_acc]
+    return {
+        "training": [training_acc, training_prec, training_recall, training_f1],
+        "test": [test_set_acc, test_set_prec, test_set_recall, test_set_f1],
+    }
 
 
 def custom_kernel(X, Y):
@@ -97,6 +103,10 @@ def main():
         "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
     )
 
+    parser.add_argument(
+        "--train_test_ratio", type=float, default=0.75, help="fraction of train samples"
+    )
+
     args = parser.parse_args()
     path = args.path
     no_of_subsamples = args.no_of_subsamples
@@ -104,36 +114,31 @@ def main():
     degree = args.degree
     C = args.C
     coef0 = args.coef0
+    train_test_ratio = args.train_test_ratio
 
-    data_f = load_csv(path)
-    df_subsamples = np.array_split(data_f, 1)
-
-
-
-    df = df_subsamples[0].copy()
+    df = load_csv(path)
 
     data = prepare_data(data_f=df, horizon=10, alpha=0.9)
 
-    #y = data["pred"]
-
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
-    #X = data[features]
 
-    #Xtotality = np.array_split(X,no_of_subsamples)
-    #Ytotality = np.array_split(y,no_of_subsamples)
-    dataA = np.array_split(data[features],4)
-    for i in range(4):
-        features = [x for x in data.columns if x not in ["gain","pred"]]
-        X= dataA[i][features]
-        y= dataA[i]["pred"]
-        X_train = X[: int(0.75 * len(X))]
-        y_train = y[: int(0.75 * len(y))]
+    dataA = np.array_split(data[features], no_of_subsamples)
 
-        X_test = X[int(0.75 * len(X)) :]
-        y_test = y[int(0.75 * len(y)) :]
+    train_acc, train_prec, train_recall, train_f1 = (0, 0, 0, 0)
+    test_acc, test_prec, test_recall, test_f1 = (0, 0, 0, 0)
 
-        t0 = time.time()
+    t0 = time.time()
+
+    for i in tqdm(range(no_of_subsamples)):
+        features = [x for x in data.columns if x not in ["gain", "pred"]]
+        X = dataA[i][features]
+        y = dataA[i]["pred"]
+        X_train = X[: int(train_test_ratio * len(X))]
+        y_train = y[: int(train_test_ratio * len(y))]
+
+        X_test = X[int(train_test_ratio * len(X)) :]
+        y_test = y[int(train_test_ratio * len(y)) :]
 
         if kernel == "custom":
             clf = SVC(kernel=custom_kernel, C=C, coef0=coef0)
@@ -142,8 +147,33 @@ def main():
 
         clf.fit(X_train, y_train)
 
-        print("Time taken: " + str((time.time() - t0) / 60) + " minutes")
-        compute_acc(clf, X_train, y_train, X_test, y_test)
+        metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
+
+        train_acc += metrics["training"][0]
+        train_prec += metrics["training"][1]
+        train_recall += metrics["training"][2]
+        train_f1 += metrics["training"][3]
+
+        test_acc += metrics["test"][0]
+        test_prec += metrics["test"][1]
+        test_recall += metrics["test"][2]
+        test_f1 += metrics["test"][3]
+
+    print("\nTime taken: " + str((time.time() - t0) / 60) + " minutes")
+
+    print("\n")
+
+    print("Average Training Accuracy:\t" + str(train_acc / no_of_subsamples))
+    print("Average Training Precision:\t" + str(train_prec / no_of_subsamples))
+    print("Average Training Recall:\t" + str(train_recall / no_of_subsamples))
+    print("Average Training F1:\t\t" + str(train_f1 / no_of_subsamples))
+
+    print("\n")
+
+    print("Average Test Accuracy:\t" + str(test_acc / no_of_subsamples))
+    print("Average Test Precision:\t" + str(test_prec / no_of_subsamples))
+    print("Average Test Recall:\t" + str(test_recall / no_of_subsamples))
+    print("Average Test F1:\t" + str(test_f1 / no_of_subsamples))
 
 
 if __name__ == "__main__":
