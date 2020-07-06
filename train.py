@@ -73,7 +73,7 @@ def main():
     parser.add_argument(
         "--no_of_subsamples",
         type=int,
-        default=2,
+        default=4,
         help="Number of samples to take from csv file",
     )
 
@@ -106,20 +106,27 @@ def main():
     coef0 = args.coef0
 
     data_f = load_csv(path)
-    df_subsamples = np.array_split(data_f, no_of_subsamples)
+    df_subsamples = np.array_split(data_f, 1)
 
-    for df_c in df_subsamples:
 
-        df = df_c.copy()
 
-        data = prepare_data(data_f=df, horizon=10, alpha=0.9)
+    df = df_subsamples[0].copy()
 
-        y = data["pred"]
+    data = prepare_data(data_f=df, horizon=10, alpha=0.9)
 
-        # remove the output from the input
-        features = [x for x in data.columns if x not in ["gain", "pred"]]
-        X = data[features]
+    #y = data["pred"]
 
+    # remove the output from the input
+    features = [x for x in data.columns if x not in ["gain"]]
+    #X = data[features]
+
+    #Xtotality = np.array_split(X,no_of_subsamples)
+    #Ytotality = np.array_split(y,no_of_subsamples)
+    dataA = np.array_split(data[features],4)
+    for i in range(4):
+        features = [x for x in data.columns if x not in ["gain","pred"]]
+        X= dataA[i][features]
+        y= dataA[i]["pred"]
         X_train = X[: int(0.75 * len(X))]
         y_train = y[: int(0.75 * len(y))]
 
