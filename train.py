@@ -65,10 +65,6 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
     }
 
 
-def custom_kernel(X, Y):
-    return 1 / (1 + np.dot(X, Y.T) ** degree)
-
-
 def main():
     parser = argparse.ArgumentParser()
 
@@ -115,6 +111,9 @@ def main():
     C = args.C
     coef0 = args.coef0
     train_test_ratio = args.train_test_ratio
+
+    def custom_kernel(X, Y):
+        return 1 / (1 + np.dot(X, Y.T) ** degree)
 
     df = load_csv(path)
 
