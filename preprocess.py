@@ -18,7 +18,8 @@ def load_csv(path):
 
     aapl = pd.read_csv(path)
     del aapl["Date"]
-    del aapl["Adj Close"]
+    if "Adj Close" in aapl.columns:
+        del aapl["Adj Close"]
     return aapl
 
 
