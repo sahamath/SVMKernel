@@ -129,6 +129,7 @@ def main():
 
     t0 = time.time()
 
+    stats = []
     for i in tqdm(range(no_of_subsamples)):
         features = [x for x in data.columns if x not in ["gain", "pred"]]
         X = dataA[i][features]
@@ -148,6 +149,8 @@ def main():
 
         metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
 
+        stats.append(metrics)
+
         train_acc += metrics["training"][0]
         train_prec += metrics["training"][1]
         train_recall += metrics["training"][2]
@@ -160,8 +163,24 @@ def main():
 
     print("\nTime taken: " + str((time.time() - t0) / 60) + " minutes")
 
-    print("\n")
+    for i in range(no_of_subsamples):
 
+        print("Stats for Subsample#" + str(i + 1))
+        print("Training Accuracy:\t" + str(stats[i]["training"][0]))
+        print("Training Precision:\t" + str(stats[i]["training"][1]))
+        print("Training Recall:\t" + str(stats[i]["training"][2]))
+        print("Training F1:\t\t" + str(stats[i]["training"][3]))
+
+        print("\n")
+
+        print("Test Accuracy:\t\t" + str(stats[i]["test"][0]))
+        print("Test Precision:\t\t" + str(stats[i]["test"][1]))
+        print("Test Recall:\t\t" + str(stats[i]["test"][2]))
+        print("Test F1:\t\t" + str(stats[i]["test"][3]))
+
+        print("\n")
+
+    print("Average Results")
     print("Average Training Accuracy:\t" + str(train_acc / no_of_subsamples))
     print("Average Training Precision:\t" + str(train_prec / no_of_subsamples))
     print("Average Training Recall:\t" + str(train_recall / no_of_subsamples))
@@ -169,10 +188,10 @@ def main():
 
     print("\n")
 
-    print("Average Test Accuracy:\t" + str(test_acc / no_of_subsamples))
-    print("Average Test Precision:\t" + str(test_prec / no_of_subsamples))
-    print("Average Test Recall:\t" + str(test_recall / no_of_subsamples))
-    print("Average Test F1:\t" + str(test_f1 / no_of_subsamples))
+    print("Average Test Accuracy:\t\t" + str(test_acc / no_of_subsamples))
+    print("Average Test Precision:\t\t" + str(test_prec / no_of_subsamples))
+    print("Average Test Recall:\t\t" + str(test_recall / no_of_subsamples))
+    print("Average Test F1:\t\t" + str(test_f1 / no_of_subsamples))
 
 
 if __name__ == "__main__":
