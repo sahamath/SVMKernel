@@ -14,6 +14,11 @@ Kernel must be one of linear/poly/rbf/custom.
 - The code reports results for all subsamples, in addition to reporting the average results.
 
 
+### Number of Subsamples Chosen
+- *^ NSEI (3).csv*: 4 
+- *novartis.csv*: 1 (cannot do more than 1 subsamples here, since with <=2 subsamples, at least one subsample has only one class)
+- *roche.csv*: 2
+- *pfizer.csv*: 3
 ### To do
 
 - Run the code on the dataset Sir provided and report the results.
