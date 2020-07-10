@@ -28,3 +28,4 @@ Kernel must be one of linear/poly/rbf/custom.
 - Run the code on the dataset Sir provided and report the results.
 - Update the Latex file.
 - Run the code for linear kernel on the *dataset/^ NSEI (3).csv* dataset (SVC with linear kernel takes hours to train).
+- SVM overfitting on most of the data. Try tweaking the regularisation constant!
