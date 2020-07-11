@@ -26,10 +26,10 @@ Kernel must be one of linear/poly/rbf/custom.
 - *dataset/pfizer.csv*: 3
 
 
-### 2. Neural SVM:
+#### 2. Neural SVM:
 
 
-### 3. Hybrid Kernels:
+#### 3. Hybrid Kernels:
 
 
 ### To do
