@@ -73,9 +73,13 @@ def main():
     )
 
     parser.add_argument(
+        "--trading_days", type=int, default=3, help="Number of trading days"
+    )
+
+    parser.add_argument(
         "--no_of_subsamples",
         type=int,
-        default=4,
+        default=1,
         help="Number of samples to take from csv file",
     )
 
@@ -105,6 +109,7 @@ def main():
 
     args = parser.parse_args()
     path = args.path
+    trading_days = args.trading_days
     no_of_subsamples = args.no_of_subsamples
     kernel = args.kernel
     degree = args.degree
@@ -112,12 +117,14 @@ def main():
     coef0 = args.coef0
     train_test_ratio = args.train_test_ratio
 
+    trading_days = [trading_days]
+
     def custom_kernel(X, Y):
         return 1 / (1 + np.dot(X, Y.T) ** degree)
 
     df = load_csv(path)
 
-    data = prepare_data(data_f=df, horizon=10, alpha=0.9)
+    data = prepare_data(data_f=df, horizon=10, alpha=0.9, trading_days=trading_days)
 
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]

@@ -1,25 +1,8 @@
-"""
-Indicators as shown by Peter Bakker at:
-https://www.quantopian.com/posts/technical-analysis-indicators-without-talib-code
-"""
-
-"""
-25-Mar-2018: Fixed syntax to support the newest version of Pandas. Warnings should no longer appear.
-             Fixed some bugs regarding min_periods and NaN.
-
-			 If you find any bugs, please report to github.com/palmbook
-"""
-
-# Import Built-Ins
 import logging
 
-# Import Third-Party
 import pandas as pd
 import numpy as np
 
-# Import Homebrew
-
-# Init Logging Facilities
 log = logging.getLogger(__name__)
 
 

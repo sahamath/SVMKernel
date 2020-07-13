@@ -35,12 +35,13 @@ def get_exp_preprocessing(data_f, alpha=0.9):
     return edata
 
 
-def feature_extraction(data_arg):
+def feature_extraction(data_arg, trading_days):
     """
 		Extracts the important features necessary for classification
 	"""
     data = data_arg.copy()
-    for x in [5, 14, 26, 44, 66]:
+    print("Trading Days:" + str(trading_days))
+    for x in trading_days:
         data = ta.relative_strength_index(data, n=x)
         data = ta.stochastic_oscillator_d(data, n=x)
         data = ta.accumulation_distribution(data, n=x)
@@ -78,11 +79,11 @@ def compute_prediction_int(df, n):
     return pred.astype(int)
 
 
-def prepare_data(data_f, horizon, alpha=0.9):
+def prepare_data(data_f, horizon, alpha=0.9, trading_days=3):
 
     aapl = data_f.copy()
     saapl = get_exp_preprocessing(aapl, alpha)
-    data = feature_extraction(saapl).dropna().iloc[:-horizon]
+    data = feature_extraction(saapl, trading_days).dropna().iloc[:-horizon]
     data["pred"] = compute_prediction_int(data, n=horizon)
     del data["Close"]
     return data.dropna()
