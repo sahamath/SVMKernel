@@ -99,7 +99,12 @@ def main():
         "--C", type=float, default=1.0, help="the regularisation parameter for SVM"
     )
 
-    parser.add_argument("--gamma", type=float, default=1.0, help="the inner product coefficient in polynomial kernel")
+    parser.add_argument(
+        "--gamma",
+        type=float,
+        default=1.0,
+        help="the inner product coefficient in polynomial kernel",
+    )
 
     parser.add_argument(
         "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
@@ -117,12 +122,12 @@ def main():
     degree = args.degree
     C = args.C
     gamma = args.gamma
-    if(kernel=='poly'):
+    if kernel == "poly":
         gamma = 1.0
 
-    if(kernel=="rbf"):
+    if kernel == "rbf":
         gamma = "scale"
-    
+
     coef0 = args.coef0
     train_test_ratio = args.train_test_ratio
 
@@ -132,13 +137,17 @@ def main():
     print("Extracting data from: " + str(path))
     print("Trading Days: " + str(trading_days[0]))
     print("Number of Subsamples: " + str(no_of_subsamples))
-    
-    if(kernel=="poly"):
-        assert gamma==1.0, "Polynomial should have gamma=1.0, otherwise it is Cobb-Douglas Kernel" 
+
+    if kernel == "poly":
+        assert (
+            gamma == 1.0
+        ), "Polynomial should have gamma=1.0, otherwise it is Cobb-Douglas Kernel"
         print("Kernel: polynomial")
         print("Degree: " + str(degree))
-    elif(kernel=="cobb-douglas"):
-        assert gamma!=1.0, "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
+    elif kernel == "cobb-douglas":
+        assert (
+            gamma != 1.0
+        ), "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
         print("Kernel: cobb-douglas")
         print("Gamma: " + str(gamma))
         print("Degree: " + str(degree))
@@ -148,15 +157,14 @@ def main():
 
     print("Regularisation Parameter, C: " + str(C))
 
-
-
-
     def custom_kernel(X, Y):
         return 1 / (1 + np.dot(X, Y.T) ** degree)
 
     df = load_csv(path)
 
-    data = prepare_data(data_f=df, horizon=trading_days[0], alpha=0.9, trading_days=trading_days)
+    data = prepare_data(
+        data_f=df, horizon=trading_days[0], alpha=0.9, trading_days=trading_days
+    )
 
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
@@ -185,7 +193,7 @@ def main():
         else:
             clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0, gamma=gamma)
         clf.fit(X_train, y_train)
-        
+
         metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
 
         stats.append(metrics)

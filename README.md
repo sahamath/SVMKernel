@@ -33,8 +33,8 @@ Kernel must be one of linear/poly/rbf/custom.
 
 
 ### To do
-
-- Run the code on the dataset Sir provided and report the results.
+- Do subsampling using sklearn's TimeSeriesSplit (more robust).
+- Run the code on the dataset Sir provided and report the results. (done)
 - Update the Latex file.
 - Run the code for linear kernel on the *dataset/^ NSEI (3).csv* dataset (SVC with linear kernel takes hours to train).
 - Hybrid Kernels
