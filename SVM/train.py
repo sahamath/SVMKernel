@@ -73,7 +73,7 @@ def main():
     )
 
     parser.add_argument(
-        "--trading_days", type=int, default=3, help="Number of trading days"
+        "--trading_days", type=int, default=30, help="Number of trading days"
     )
 
     parser.add_argument(
@@ -88,7 +88,7 @@ def main():
         type=str,
         default="rbf",
         help="the kernel for SVM",
-        choices=["linear", "rbf", "poly", "custom"],
+        choices=["linear", "rbf", "poly", "custom", "cobb-douglas"],
     )
 
     parser.add_argument(
@@ -98,6 +98,8 @@ def main():
     parser.add_argument(
         "--C", type=float, default=1.0, help="the regularisation parameter for SVM"
     )
+
+    parser.add_argument("--gamma", type=float, default=1.0, help="the inner product coefficient in polynomial kernel")
 
     parser.add_argument(
         "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
@@ -114,17 +116,47 @@ def main():
     kernel = args.kernel
     degree = args.degree
     C = args.C
+    gamma = args.gamma
+    if(kernel=='poly'):
+        gamma = 1.0
+
+    if(kernel=="rbf"):
+        gamma = "scale"
+    
     coef0 = args.coef0
     train_test_ratio = args.train_test_ratio
 
     trading_days = [trading_days]
+
+    print("Details: ")
+    print("Extracting data from: " + str(path))
+    print("Trading Days: " + str(trading_days[0]))
+    print("Number of Subsamples: " + str(no_of_subsamples))
+    
+    if(kernel=="poly"):
+        assert gamma==1.0, "Polynomial should have gamma=1.0, otherwise it is Cobb-Douglas Kernel" 
+        print("Kernel: polynomial")
+        print("Degree: " + str(degree))
+    elif(kernel=="cobb-douglas"):
+        assert gamma!=1.0, "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
+        print("Kernel: cobb-douglas")
+        print("Gamma: " + str(gamma))
+        print("Degree: " + str(degree))
+        kernel = "poly"
+    else:
+        print("Kernel: " + str(kernel))
+
+    print("Regularisation Parameter, C: " + str(C))
+
+
+
 
     def custom_kernel(X, Y):
         return 1 / (1 + np.dot(X, Y.T) ** degree)
 
     df = load_csv(path)
 
-    data = prepare_data(data_f=df, horizon=10, alpha=0.9, trading_days=trading_days)
+    data = prepare_data(data_f=df, horizon=trading_days[0], alpha=0.9, trading_days=trading_days)
 
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
@@ -143,17 +175,17 @@ def main():
         y = dataA[i]["pred"]
         X_train = X[: int(train_test_ratio * len(X))]
         y_train = y[: int(train_test_ratio * len(y))]
+        print(X_train.shape)
 
         X_test = X[int(train_test_ratio * len(X)) :]
         y_test = y[int(train_test_ratio * len(y)) :]
 
         if kernel == "custom":
-            clf = SVC(kernel=custom_kernel, C=C, coef0=coef0)
+            clf = SVC(kernel=custom_kernel, C=C)
         else:
-            clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0)
-
+            clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0, gamma=gamma)
         clf.fit(X_train, y_train)
-
+        
         metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
 
         stats.append(metrics)

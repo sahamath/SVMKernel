@@ -40,7 +40,6 @@ def feature_extraction(data_arg, trading_days):
 		Extracts the important features necessary for classification
 	"""
     data = data_arg.copy()
-    print("Trading Days:" + str(trading_days))
     for x in trading_days:
         data = ta.relative_strength_index(data, n=x)
         data = ta.stochastic_oscillator_d(data, n=x)
@@ -79,8 +78,7 @@ def compute_prediction_int(df, n):
     return pred.astype(int)
 
 
-def prepare_data(data_f, horizon, alpha=0.9, trading_days=3):
-
+def prepare_data(data_f, horizon, alpha=0.9, trading_days=[3]):
     aapl = data_f.copy()
     saapl = get_exp_preprocessing(aapl, alpha)
     data = feature_extraction(saapl, trading_days).dropna().iloc[:-horizon]
