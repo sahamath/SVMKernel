@@ -152,6 +152,9 @@ def main():
         print("Gamma: " + str(gamma))
         print("Degree: " + str(degree))
         kernel = "poly"
+    elif kernel == "custom":
+        print("Kernel: custom")
+        print("Degree: " + str(degree))
     else:
         print("Kernel: " + str(kernel))
 
