@@ -1,7 +1,8 @@
 import warnings
-
+import random
 warnings.filterwarnings("ignore")
-
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 from sklearn.svm import SVC
@@ -69,7 +70,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--path", type=str, default="dataset/^NSEI (3).csv", help="path of csv file"
+        "--path", type=str, default="dataset/NDTX.csv", help="path of csv file"
     )
 
     parser.add_argument(
@@ -173,7 +174,7 @@ def main():
     features = [x for x in data.columns if x not in ["gain"]]
 
     dataA = np.array_split(data[features], no_of_subsamples)
-
+    print(dataA)
     train_acc, train_prec, train_recall, train_f1 = (0, 0, 0, 0)
     test_acc, test_prec, test_recall, test_f1 = (0, 0, 0, 0)
 
@@ -190,11 +191,11 @@ def main():
 
         X_test = X[int(train_test_ratio * len(X)) :]
         y_test = y[int(train_test_ratio * len(y)) :]
-
+        a=random.seed()
         if kernel == "custom":
-            clf = SVC(kernel=custom_kernel, C=C)
+        	clf = make_pipeline(StandardScaler(),SVC(kernel=custom_kernel, C=C,class_weight='balanced',cache_size=1000))
         else:
-            clf = SVC(kernel=kernel, C=C, degree=degree, coef0=coef0, gamma=gamma)
+        	clf = make_pipeline(StandardScaler(),SVC(kernel=kernel, C=C, degree=degree, coef0=coef0, gamma=gamma,class_weight='balanced',cache_size=1000))
         clf.fit(X_train, y_train)
 
         metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
