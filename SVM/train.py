@@ -1,12 +1,15 @@
 import warnings
-import random
+
 warnings.filterwarnings("ignore")
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
+
+import argparse
+
 import numpy as np
 
-from sklearn.svm import SVC
+import random
+import time
 
+from sklearn.svm import SVC
 from sklearn.metrics import (
     f1_score,
     precision_score,
@@ -14,12 +17,10 @@ from sklearn.metrics import (
     recall_score,
     accuracy_score,
 )
-
-import argparse
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 from preprocess import prepare_data, load_csv
-
-import time
 
 from tqdm.auto import tqdm
 
@@ -61,8 +62,20 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
 	"""
 
     return {
-        "training": [training_acc, training_prec, training_recall, training_f1],
-        "test": [test_set_acc, test_set_prec, test_set_recall, test_set_f1],
+        "training": [
+            training_acc,
+            training_prec,
+            training_recall,
+            training_f1,
+            training_confusion_matrix,
+        ],
+        "test": [
+            test_set_acc,
+            test_set_prec,
+            test_set_recall,
+            test_set_f1,
+            test_set_confusion_matrix,
+        ],
     }
 
 
@@ -123,6 +136,7 @@ def main():
     degree = args.degree
     C = args.C
     gamma = args.gamma
+
     if kernel == "poly":
         gamma = 1.0
 
@@ -132,19 +146,19 @@ def main():
     coef0 = args.coef0
     train_test_ratio = args.train_test_ratio
 
-    trading_days = [trading_days]
-
     print("Details: ")
     print("Extracting data from: " + str(path))
-    print("Trading Days: " + str(trading_days[0]))
+    print("Trading Days: " + str(trading_days))
     print("Number of Subsamples: " + str(no_of_subsamples))
 
     if kernel == "poly":
         assert (
             gamma == 1.0
         ), "Polynomial should have gamma=1.0, otherwise it is Cobb-Douglas Kernel"
+
         print("Kernel: polynomial")
         print("Degree: " + str(degree))
+
     elif kernel == "cobb-douglas":
         assert (
             gamma != 1.0
@@ -153,28 +167,33 @@ def main():
         print("Gamma: " + str(gamma))
         print("Degree: " + str(degree))
         kernel = "poly"
+
     elif kernel == "custom":
         print("Kernel: custom")
         print("Degree: " + str(degree))
+
     else:
         print("Kernel: " + str(kernel))
 
     print("Regularisation Parameter, C: " + str(C))
+
+    # define the custom kernels
+
+    def poly_cobb_kernel(X, Y):
+        return gamma * (np.dot(X, Y.T)) ** degree
 
     def custom_kernel(X, Y):
         return 1 / (1 + np.dot(X, Y.T) ** degree)
 
     df = load_csv(path)
 
-    data = prepare_data(
-        data_f=df, horizon=trading_days[0], alpha=0.9, trading_days=trading_days
-    )
+    data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9,)
 
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
     dataA = np.array_split(data[features], no_of_subsamples)
-    print(dataA)
+    # print(dataA)
     train_acc, train_prec, train_recall, train_f1 = (0, 0, 0, 0)
     test_acc, test_prec, test_recall, test_f1 = (0, 0, 0, 0)
 
@@ -185,17 +204,49 @@ def main():
         features = [x for x in data.columns if x not in ["gain", "pred"]]
         X = dataA[i][features]
         y = dataA[i]["pred"]
+
         X_train = X[: int(train_test_ratio * len(X))]
         y_train = y[: int(train_test_ratio * len(y))]
-        print(X_train.shape)
 
         X_test = X[int(train_test_ratio * len(X)) :]
         y_test = y[int(train_test_ratio * len(y)) :]
-        a=random.seed()
+
         if kernel == "custom":
-        	clf = make_pipeline(StandardScaler(),SVC(kernel=custom_kernel, C=C,class_weight='balanced',cache_size=1000))
+            clf = make_pipeline(
+                StandardScaler(),
+                SVC(
+                    kernel=custom_kernel,
+                    C=C,
+                    class_weight="balanced",
+                    cache_size=100000,
+                ),
+            )
+
+        elif kernel == "poly":
+            clf = make_pipeline(
+                StandardScaler(),
+                SVC(
+                    kernel=poly_cobb_kernel,
+                    C=C,
+                    class_weight="balanced",
+                    cache_size=100000,
+                ),
+            )
+
         else:
-        	clf = make_pipeline(StandardScaler(),SVC(kernel=kernel, C=C, degree=degree, coef0=coef0, gamma=gamma,class_weight='balanced',cache_size=1000))
+            clf = make_pipeline(
+                StandardScaler(),
+                SVC(
+                    kernel=kernel,
+                    C=C,
+                    degree=degree,
+                    coef0=coef0,
+                    gamma=gamma,
+                    class_weight="balanced",
+                    cache_size=100000,
+                ),
+            )
+
         clf.fit(X_train, y_train)
 
         metrics = compute_acc(clf, X_train, y_train, X_test, y_test)
@@ -211,6 +262,9 @@ def main():
         test_prec += metrics["test"][1]
         test_recall += metrics["test"][2]
         test_f1 += metrics["test"][3]
+
+        print(metrics["training"][4])
+        print(metrics["test"][4])
 
     print("\nTime taken: " + str((time.time() - t0) / 60) + " minutes")
 
