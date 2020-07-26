@@ -16,10 +16,11 @@ from sklearn.metrics import (
     confusion_matrix,
     recall_score,
     accuracy_score,
+    classification_report,
 )
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import TimeSeriesSplit
 
 from preprocess import prepare_data, load_csv
 
@@ -121,7 +122,7 @@ def main():
     else:
         print("Kernel: " + str(kernel))
 
-    print("Regularisation Parameter, C: " + str(C))
+    # print("Regularisation Parameter, C: " + str(C))
 
     # define the custom kernels
     def poly_cobb_kernel(X, Y):
@@ -139,73 +140,74 @@ def main():
 
     dataA = np.array_split(data[features], 1)
 
-    i = 0
     features = [x for x in data.columns if x not in ["gain", "pred"]]
-    X = dataA[i][features]
-    y = dataA[i]["pred"]
+    X = np.array(dataA[0][features])
+    y = np.array(dataA[0]["pred"])
 
-    X_train = X[: int(train_test_ratio * len(X))]
-    y_train = y[: int(train_test_ratio * len(y))]
-
-    X_test = X[int(train_test_ratio * len(X)) :]
-    y_test = y[int(train_test_ratio * len(y)) :]
-
-    if kernel == "custom":
-        clf = make_pipeline(
-            StandardScaler(),
-            SVC(kernel=custom_kernel, class_weight="balanced", cache_size=100000),
-        )
-
-    elif kernel == "poly":
-        clf = make_pipeline(
-            StandardScaler(),
-            SVC(kernel=poly_cobb_kernel, class_weight="balanced", cache_size=100000),
-        )
-
-    else:
-        clf = make_pipeline(
-            StandardScaler(),
-            SVC(
-                kernel=kernel,
-                degree=degree,
-                coef0=coef0,
-                gamma=gamma,
-                class_weight="balanced",
-                cache_size=100000,
-            ),
-        )
-
-    print(clf.get_params().keys())
+    tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
-    grid = GridSearchCV(clf, param_grid, cv=folds, refit=True, verbose=2, n_jobs=-1)
-    grid.fit(X_train, y_train)
-
+    i = 0
     print("\n")
+    for tr_index, val_index in tscv.split(X):
 
-    print("Performed Grid Search on:\n")
-    print("C: " + str(C))
-    print("gamma: " + str(gamma))
+        print("Fold #" + str(i + 1))
+        print("\n")
 
-    print("\n")
+        X_train, X_test = X[tr_index], X[val_index]
+        y_train, y_test = y[tr_index], y[val_index]
 
-    print("The best choice of hyperparameters:")
-    print(str(grid.best_estimator_) + "\n")
+        for C in param_grid["svc__C"]:
 
-    y_train_pred = grid.predict(X_train)
-    print("The results on the train set: ")
-    y_train_label = np.array(y_train)
-    train_set_acc = accuracy_score(y_train_label, y_train_pred)
-    print(train_set_acc)
+            print("Performing Grid (Time Series) Search on:\n")
+            print("C: " + str(C))
+            print("gamma: " + str(gamma))
 
-    print("\n")
+            if kernel == "custom":
+                clf = make_pipeline(
+                    StandardScaler(),
+                    SVC(
+                        kernel=custom_kernel,
+                        C=C,
+                        class_weight="balanced",
+                        cache_size=100000,
+                    ),
+                )
 
-    y_test_pred = grid.predict(X_test)
-    print("The results on the test set: ")
-    y_test_label = np.array(y_test)
-    test_set_acc = accuracy_score(y_test_label, y_test_pred)
-    print(test_set_acc)
+            elif kernel == "poly":
+                clf = make_pipeline(
+                    StandardScaler(),
+                    SVC(
+                        kernel=poly_cobb_kernel,
+                        C=C,
+                        class_weight="balanced",
+                        cache_size=100000,
+                    ),
+                )
 
-    print(clf.get_params().keys())
+            else:
+                clf = make_pipeline(
+                    StandardScaler(),
+                    SVC(
+                        kernel=kernel,
+                        degree=degree,
+                        C=C,
+                        coef0=coef0,
+                        gamma=gamma,
+                        class_weight="balanced",
+                        cache_size=100000,
+                    ),
+                )
+
+            clf.fit(X_train, y_train)
+
+            print("Training Report:")
+            y_train_pred = clf.predict(X_train)
+            print(classification_report(y_train, y_train_pred, labels=[0, 1]))
+            print("\n")
+            print("Test Report:")
+            y_test_pred = clf.predict(X_test)
+            print(classification_report(y_test, y_test_pred, labels=[0, 1]))
+        i += 1
 
 
 if __name__ == "__main__":

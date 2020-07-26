@@ -205,6 +205,9 @@ def main():
         X = dataA[i][features]
         y = dataA[i]["pred"]
 
+        print((y == 1).sum())
+        print((y == 0).sum())
+
         X_train = X[: int(train_test_ratio * len(X))]
         y_train = y[: int(train_test_ratio * len(y))]
 
