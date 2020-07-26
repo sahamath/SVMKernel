@@ -22,6 +22,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import TimeSeriesSplit
 
+from statistics import mean
+
 from preprocess import prepare_data, load_csv
 
 from tqdm.auto import tqdm
@@ -146,13 +148,17 @@ def main():
 
     tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
-    i = 0
+
     print("\n")
+    metrics = {}
     for C in param_grid["svc__C"]:
 
         print("Performing Grid (Time Series) Search on:\n")
         print("C: " + str(C))
         print("gamma: " + str(gamma))
+
+        metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
+        i = 0
 
         for tr_index, val_index in tscv.split(X):
 
@@ -202,13 +208,39 @@ def main():
 
             print("Training Report:")
             y_train_pred = clf.predict(X_train)
+            train_res = classification_report(y_train, y_train_pred, output_dict=True)
             print(classification_report(y_train, y_train_pred))
             print("\n")
             print("Test Report:")
             y_test_pred = clf.predict(X_test)
+            test_res = classification_report(y_test, y_test_pred, output_dict=True)
             print(classification_report(y_test, y_test_pred))
+            metrics[C]["accuracy"].append(test_res["accuracy"])
+            metrics[C]["precision"].append(test_res["macro avg"]["precision"])
+            metrics[C]["recall"].append(test_res["macro avg"]["recall"])
+            metrics[C]["f1"].append(test_res["macro avg"]["f1-score"])
 
-        i += 1
+            i += 1
+
+    print(metrics)
+    print("\n")
+    max_f1_C = list(metrics.keys())[0]
+    for C in metrics:
+        print("For regularisation parameter: " + str(C))
+        print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
+        print("Precision: " + str(mean(metrics[C]["precision"])))
+        print("Recall: " + str(mean(metrics[C]["recall"])))
+        print("F1: " + str(mean(metrics[C]["f1"])))
+        if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
+            max_f1_C = C
+        print("\n")
+
+    print("Best Results:\n")
+    print(max_f1_C)
+    print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
+    print("Precision: " + str(mean(metrics[max_f1_C]["precision"])))
+    print("Recall: " + str(mean(metrics[max_f1_C]["recall"])))
+    print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
 
 
 if __name__ == "__main__":
