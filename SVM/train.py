@@ -266,8 +266,8 @@ def main():
         test_recall += metrics["test"][2]
         test_f1 += metrics["test"][3]
 
-        print(metrics["training"][4])
-        print(metrics["test"][4])
+        # print(metrics["training"][4])
+        # print(metrics["test"][4])
 
     print("\nTime taken: " + str((time.time() - t0) / 60) + " minutes")
 

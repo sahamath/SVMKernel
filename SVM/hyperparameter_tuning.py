@@ -33,11 +33,11 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--path", type=str, default="dataset/NDTX.csv", help="path of csv file"
+        "--path", type=str, default="dataset/NSEIweekly.csv", help="path of csv file"
     )
 
     parser.add_argument(
-        "--trading_days", type=int, default=30, help="Number of trading days"
+        "--trading_days", type=int, default=1, help="Number of trading days"
     )
 
     parser.add_argument(
@@ -136,7 +136,7 @@ def main():
     # load the dataset
     df = load_csv(path)
     data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9,)
-
+    print(data)
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
