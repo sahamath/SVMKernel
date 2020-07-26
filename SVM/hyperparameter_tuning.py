@@ -148,19 +148,19 @@ def main():
     param_grid = {"svc__C": C}
     i = 0
     print("\n")
-    for tr_index, val_index in tscv.split(X):
+    for C in param_grid["svc__C"]:
 
-        print("Fold #" + str(i + 1))
-        print("\n")
+        print("Performing Grid (Time Series) Search on:\n")
+        print("C: " + str(C))
+        print("gamma: " + str(gamma))
 
-        X_train, X_test = X[tr_index], X[val_index]
-        y_train, y_test = y[tr_index], y[val_index]
+        for tr_index, val_index in tscv.split(X):
 
-        for C in param_grid["svc__C"]:
+            print("Fold #" + str(i + 1))
+            print("\n")
 
-            print("Performing Grid (Time Series) Search on:\n")
-            print("C: " + str(C))
-            print("gamma: " + str(gamma))
+            X_train, X_test = X[tr_index], X[val_index]
+            y_train, y_test = y[tr_index], y[val_index]
 
             if kernel == "custom":
                 clf = make_pipeline(
@@ -202,11 +202,12 @@ def main():
 
             print("Training Report:")
             y_train_pred = clf.predict(X_train)
-            print(classification_report(y_train, y_train_pred, labels=[0, 1]))
+            print(classification_report(y_train, y_train_pred))
             print("\n")
             print("Test Report:")
             y_test_pred = clf.predict(X_test)
-            print(classification_report(y_test, y_test_pred, labels=[0, 1]))
+            print(classification_report(y_test, y_test_pred))
+
         i += 1
 
 

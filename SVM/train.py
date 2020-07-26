@@ -83,7 +83,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--path", type=str, default="dataset/NDTX.csv", help="path of csv file"
+        "--path", type=str, default="dataset/^NSEI (3).csv", help="path of csv file"
     )
 
     parser.add_argument(
