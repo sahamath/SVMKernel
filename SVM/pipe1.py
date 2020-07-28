@@ -1,5 +1,6 @@
 import warnings
-
+import sys
+# sys.stdout = open('output.txt','a')
 warnings.filterwarnings("ignore")
 
 import argparse
@@ -37,7 +38,7 @@ def main():
     )
 
     parser.add_argument(
-        "--trading_days", type=int, default=1, help="Number of trading days"
+        "--trading_days", type=int, default=5, help="Number of trading days"
     )
 
     parser.add_argument(
@@ -96,33 +97,33 @@ def main():
     train_test_ratio = args.train_test_ratio
     folds = args.folds
 
-    print("Details: ")
-    print("Extracting data from: " + str(path))
-    print("Trading Days: " + str(trading_days))
+    # print("Details: ")
+    # print("Extracting data from: " + str(path))
+    # print("Trading Days: " + str(trading_days))
 
     if kernel == "poly":
         assert (
             gamma == 1.0
         ), "Polynomial should have gamma=1.0, otherwise it is Cobb-Douglas Kernel"
 
-        print("Kernel: polynomial")
-        print("Degree: " + str(degree))
+        # print("Kernel: polynomial")
+        # print("Degree: " + str(degree))
 
     elif kernel == "cobb-douglas":
         assert (
             gamma != 1.0
         ), "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
-        print("Kernel: cobb-douglas")
-        print("Gamma: " + str(gamma))
-        print("Degree: " + str(degree))
+        # print("Kernel: cobb-douglas")
+        # print("Gamma: " + str(gamma))
+        # print("Degree: " + str(degree))
         kernel = "poly"
 
-    elif kernel == "custom":
-        print("Kernel: custom")
-        print("Degree: " + str(degree))
+    # elif kernel == "custom":
+        # print("Kernel: custom")
+        # print("Degree: " + str(degree))
 
-    else:
-        print("Kernel: " + str(kernel))
+    # else:
+        # print("Kernel: " + str(kernel))
 
     # print("Regularisation Parameter, C: " + str(C))
 
@@ -136,7 +137,7 @@ def main():
     # load the dataset
     df = load_csv(path)
     data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9,)
-    print(data)
+    # print(data)
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
@@ -149,21 +150,21 @@ def main():
     tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
 
-    print("\n")
+    # print("\n")
     metrics = {}
     for C in param_grid["svc__C"]:
 
-        print("Performing Grid (Time Series) Search on:\n")
-        print("C: " + str(C))
-        print("gamma: " + str(gamma))
+        # print("Performing Grid (Time Series) Search on:\n")
+        # print("C: " + str(C))
+        # print("gamma: " + str(gamma))
 
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
         i = 0
 
         for tr_index, val_index in tscv.split(X):
 
-            print("Fold #" + str(i + 1))
-            print("\n")
+            # print("Fold #" + str(i + 1))
+            # print("\n")
 
             X_train, X_test = X[tr_index], X[val_index]
             y_train, y_test = y[tr_index], y[val_index]
@@ -206,15 +207,15 @@ def main():
 
             clf.fit(X_train, y_train)
 
-            print("Training Report:")
+            # print("Training Report:")
             y_train_pred = clf.predict(X_train)
             train_res = classification_report(y_train, y_train_pred, output_dict=True)
-            print(classification_report(y_train, y_train_pred))
-            print("\n")
-            print("Test Report:")
+            # print(classification_report(y_train, y_train_pred))
+            # print("\n")
+            # print("Test Report:")
             y_test_pred = clf.predict(X_test)
             test_res = classification_report(y_test, y_test_pred, output_dict=True)
-            print(classification_report(y_test, y_test_pred))
+            # print(classification_report(y_test, y_test_pred))
             metrics[C]["accuracy"].append(test_res["accuracy"])
             metrics[C]["precision"].append(test_res["macro avg"]["precision"])
             metrics[C]["recall"].append(test_res["macro avg"]["recall"])
@@ -222,24 +223,24 @@ def main():
 
             i += 1
 
-    print(metrics)
-    print("\n")
+    # print(metrics)
+    # print("\n")
     max_f1_C = list(metrics.keys())[0]
     for C in metrics:
-        print("For regularisation parameter: " + str(C))
-        print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
-        print("Precision: " + str(mean(metrics[C]["precision"])))
-        print("Recall: " + str(mean(metrics[C]["recall"])))
-        print("F1: " + str(mean(metrics[C]["f1"])))
+        # print("For regularisation parameter: " + str(C))
+        # print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
+        # print("Precision: " + str(mean(metrics[C]["precision"])))
+        # print("Recall: " + str(mean(metrics[C]["recall"])))
+        # print("F1: " + str(mean(metrics[C]["f1"])))
         if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
             max_f1_C = C
-        print("\n")
+        # print("\n")
 
-    print("Best Results:\n")
+    # print("Best Results:\n")
     print(max_f1_C)
-    print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
-    print("Precision: " + str(mean(metrics[max_f1_C]["precision"])))
-    print("Recall: " + str(mean(metrics[max_f1_C]["recall"])))
+    # print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
+    # print("Precision: " + str(mean(metrics[max_f1_C]["precision"])))
+    # print("Recall: " + str(mean(metrics[max_f1_C]["recall"])))
     print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
 
 
