@@ -4,7 +4,7 @@ import sys
 warnings.filterwarnings("ignore")
 
 import argparse
-
+from pipe2 import trainer
 import numpy as np
 
 import random
@@ -30,56 +30,7 @@ from preprocess import prepare_data, load_csv
 from tqdm.auto import tqdm
 
 
-def main():
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        "--path", type=str, default="dataset/NSEIdaily.csv", help="path of csv file"
-    )
-
-    parser.add_argument(
-        "--trading_days", type=int, default=5, help="Number of trading days"
-    )
-
-    parser.add_argument(
-        "--kernel",
-        type=str,
-        default="rbf",
-        help="the kernel for SVM",
-        choices=["linear", "rbf", "poly", "custom", "cobb-douglas"],
-    )
-
-    parser.add_argument(
-        "--degree", type=int, default=3, help="value of p in polynomial/custom kernel"
-    )
-
-    parser.add_argument(
-        "--C",
-        nargs="+",
-        default=[10 ** i for i in range(-100, 101)],
-        help="the regularisation parameter for SVM",
-    )
-
-    parser.add_argument(
-        "--gamma",
-        type=float,
-        default=1.0,
-        help="the inner product coefficient in polynomial kernel",
-    )
-
-    parser.add_argument(
-        "--coef0", type=float, default=0.0, help="coefficient for polynomial kernel"
-    )
-
-    parser.add_argument(
-        "--train_test_ratio", type=float, default=0.75, help="fraction of train samples"
-    )
-
-    parser.add_argument(
-        "--folds", type=int, default=5, help="k in k-fold cross validation"
-    )
-
-    args = parser.parse_args()
+def tuner(args):
     path = args.path
     trading_days = args.trading_days
     kernel = args.kernel
@@ -113,21 +64,11 @@ def main():
         assert (
             gamma != 1.0
         ), "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
-        # print("Kernel: cobb-douglas")
-        # print("Gamma: " + str(gamma))
-        # print("Degree: " + str(degree))
+        print("Degree in pipe1: " + str(degree))
         kernel = "poly"
 
-    # elif kernel == "custom":
-        # print("Kernel: custom")
-        # print("Degree: " + str(degree))
+    
 
-    # else:
-        # print("Kernel: " + str(kernel))
-
-    # print("Regularisation Parameter, C: " + str(C))
-
-    # define the custom kernels
     def poly_cobb_kernel(X, Y):
         return gamma * (np.dot(X, Y.T)) ** degree
 
@@ -153,10 +94,6 @@ def main():
     # print("\n")
     metrics = {}
     for C in param_grid["svc__C"]:
-
-        # print("Performing Grid (Time Series) Search on:\n")
-        # print("C: " + str(C))
-        # print("gamma: " + str(gamma))
 
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
         i = 0
@@ -227,22 +164,16 @@ def main():
     # print("\n")
     max_f1_C = list(metrics.keys())[0]
     for C in metrics:
-        # print("For regularisation parameter: " + str(C))
-        # print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
-        # print("Precision: " + str(mean(metrics[C]["precision"])))
-        # print("Recall: " + str(mean(metrics[C]["recall"])))
-        # print("F1: " + str(mean(metrics[C]["f1"])))
         if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
             max_f1_C = C
         # print("\n")
 
-    # print("Best Results:\n")
+    print("Best Results:\n")
     print(max_f1_C)
-    # print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
-    # print("Precision: " + str(mean(metrics[max_f1_C]["precision"])))
-    # print("Recall: " + str(mean(metrics[max_f1_C]["recall"])))
     print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
-
+    args1 = args
+    args1.currC = max_f1_C
+    trainer(args1)
 
 if __name__ == "__main__":
     main()
