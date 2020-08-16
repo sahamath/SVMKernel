@@ -30,12 +30,12 @@ from preprocess import prepare_data, load_csv
 from tqdm.auto import tqdm
 
 
-def tuner(args):
+def tuner(args,f, writer):
     path = args.path
     trading_days = args.trading_days
     kernel = args.kernel
     degree = args.degree
-    C = C = [float(i) for i in args.C]
+    C = [float(i) for i in args.C]
     gamma = args.gamma
 
     if kernel == "poly":
@@ -64,7 +64,7 @@ def tuner(args):
         assert (
             gamma != 1.0
         ), "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
-        print("Degree in pipe1: " + str(degree))
+        # print("Degree in pipe1: " + str(degree))
         kernel = "poly"
 
     
@@ -152,6 +152,7 @@ def tuner(args):
             # print("Test Report:")
             y_test_pred = clf.predict(X_test)
             test_res = classification_report(y_test, y_test_pred, output_dict=True)
+            # print(test_res)
             # print(classification_report(y_test, y_test_pred))
             metrics[C]["accuracy"].append(test_res["accuracy"])
             metrics[C]["precision"].append(test_res["macro avg"]["precision"])
@@ -171,9 +172,17 @@ def tuner(args):
     print("Best Results:\n")
     print(max_f1_C)
     print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
+    
+    f.write("\n\nBest Results of Tuner:\n")
+    f.write("\nDegree: " + str(args.degree))
+    f.write("\nC: " + str(max_f1_C))
+    f.write("\ngamma: " + str(gamma))
+    f.write("\nBest F1 Score: " + str(mean(metrics[max_f1_C]["f1"])))
+    
+
     args1 = args
     args1.currC = max_f1_C
-    trainer(args1)
+    trainer(args1, f, writer)
 
 if __name__ == "__main__":
     main()

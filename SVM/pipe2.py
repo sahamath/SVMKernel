@@ -79,7 +79,7 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
     }
 
 
-def trainer(args):
+def trainer(args, f, writer):
     
     path = args.path
     trading_days = args.trading_days
@@ -157,8 +157,8 @@ def trainer(args):
         X = dataA[i][features]
         y = dataA[i]["pred"]
 
-        print((y == 1).sum())
-        print((y == 0).sum())
+        #print((y == 1).sum())
+        #print((y == 0).sum())
 
         X_train = X[: int(train_test_ratio * len(X))]
         y_train = y[: int(train_test_ratio * len(y))]
@@ -253,5 +253,18 @@ def trainer(args):
     print("Average Test Recall:\t\t" + str(test_recall / no_of_subsamples))
     print("Average Test F1:\t\t" + str(test_f1 / no_of_subsamples))
 
+    f.write("\nAverage Results after Training")
+    f.write("\nAverage Training Accuracy:\t" + str(train_acc / no_of_subsamples))
+    f.write("\nAverage Training Precision:\t" + str(train_prec / no_of_subsamples))
+    f.write("\nAverage Training Recall:\t" + str(train_recall / no_of_subsamples))
+    f.write("\nAverage Training F1:\t\t" + str(train_f1 / no_of_subsamples))
 
+    f.write("\n")
+
+    f.write("\nAverage Test Accuracy:\t\t" + str(test_acc / no_of_subsamples))
+    f.write("\nAverage Test Precision:\t\t" + str(test_prec / no_of_subsamples))
+    f.write("\nAverage Test Recall:\t\t" + str(test_recall / no_of_subsamples))
+    f.write("\nAverage Test F1:\t\t" + str(test_f1 / no_of_subsamples))
+
+    writer.writerow([degree, gamma, C, train_f1/no_of_subsamples, test_f1/no_of_subsamples, train_acc/no_of_subsamples, test_acc/no_of_subsamples])
 
