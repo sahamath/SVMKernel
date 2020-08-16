@@ -1,5 +1,6 @@
 import warnings
 import sys
+
 # sys.stdout = open('output.txt','a')
 warnings.filterwarnings("ignore")
 
@@ -30,7 +31,7 @@ from preprocess import prepare_data, load_csv
 from tqdm.auto import tqdm
 
 
-def tuner(args,f, writer):
+def tuner(args, f, writer):
     path = args.path
     trading_days = args.trading_days
     kernel = args.kernel
@@ -66,8 +67,6 @@ def tuner(args,f, writer):
         ), "Cobb-Douglas should have gamma!=1.0, otherwise it is Polynomial Kernel"
         # print("Degree in pipe1: " + str(degree))
         kernel = "poly"
-
-    
 
     def poly_cobb_kernel(X, Y):
         return gamma * (np.dot(X, Y.T)) ** degree
@@ -172,17 +171,17 @@ def tuner(args,f, writer):
     print("Best Results:\n")
     print(max_f1_C)
     print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
-    
+
     f.write("\n\nBest Results of Tuner:\n")
     f.write("\nDegree: " + str(args.degree))
     f.write("\nC: " + str(max_f1_C))
     f.write("\ngamma: " + str(gamma))
     f.write("\nBest F1 Score: " + str(mean(metrics[max_f1_C]["f1"])))
-    
 
     args1 = args
     args1.currC = max_f1_C
     trainer(args1, f, writer)
+
 
 if __name__ == "__main__":
     main()

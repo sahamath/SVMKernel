@@ -3,1223 +3,1223 @@
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.1
-Best F1 Score: 0.48915132666257916
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.6832543015851511
-Average Training Precision:	0.7172986940428802
-Average Training Recall:	0.8654967980458176
-Average Training F1:		0.7661586740630236
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6829268292682926
-Average Test Precision:		0.6631578947368422
-Average Test Recall:		0.8705882352941178
-Average Test F1:		0.752259523656398
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.2
-Best F1 Score: 0.49741178924845014
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.6948651944181006
-Average Training Precision:	0.7523211482238071
-Average Training Recall:	0.8370809872770657
-Average Training F1:		0.75589361233558
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.697560975609756
-Average Test Precision:		0.6878861788617886
-Average Test Recall:		0.8003921568627451
-Average Test F1:		0.736969696969697
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.3
-Best F1 Score: 0.5102508592231756
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7178702072889852
-Average Training Precision:	0.7916196912700688
-Average Training Recall:	0.7987460034518857
-Average Training F1:		0.7732081160594246
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6439024390243903
-Average Test Precision:		0.6965636417497778
-Average Test Recall:		0.6737254901960784
-Average Test F1:		0.6671428571428571
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.4
-Best F1 Score: 0.5107042569920781
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7294269069231811
-Average Training Precision:	0.8103718528566626
-Average Training Recall:	0.7861622763583548
-Average Training F1:		0.7775338165892112
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6390243902439025
-Average Test Precision:		0.7036981446737544
-Average Test Recall:		0.654142156862745
-Average Test F1:		0.6545751633986929
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.5
-Best F1 Score: 0.49288515201828415
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7228288849749356
-Average Training Precision:	0.8154822433791601
-Average Training Recall:	0.7675892444519896
-Average Training F1:		0.7665331414672251
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6341463414634146
-Average Test Precision:		0.713251258226868
-Average Test Recall:		0.6341421568627451
-Average Test F1:		0.6390917208827657
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.6
-Best F1 Score: 0.46952259669791135
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7426364991193605
-Average Training Precision:	0.8227382055695308
-Average Training Recall:	0.7886346188306972
-Average Training F1:		0.7853379559156196
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6097560975609756
-Average Test Precision:		0.6703091480494636
-Average Test Recall:		0.6278921568627451
-Average Test F1:		0.6323232323232324
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.7
-Best F1 Score: 0.47019425044269836
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7475816285056226
-Average Training Precision:	0.8304575266913862
-Average Training Recall:	0.7865534900829018
-Average Training F1:		0.7888006742226691
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.6
-Average Test Precision:		0.670383631713555
-Average Test Recall:		0.6214405439595193
-Average Test F1:		0.6302605110364876
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.8
-Best F1 Score: 0.4701954379320941
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7657228017883756
-Average Training Precision:	0.8420930175541826
-Average Training Recall:	0.8001914570542021
-Average Training F1:		0.8048374559587375
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.5951219512195122
-Average Test Precision:		0.6652900488258544
-Average Test Recall:		0.6214405439595193
-Average Test F1:		0.6298925584434711
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
 
 Best Results of Tuner:
 
 Degree: 2
-C: 0.0001
+C: 1e-63
 gamma: 0.9
-Best F1 Score: 0.4649211718895448
+Best F1 Score: 0.42505382109438905
 Average Results after Training
-Average Training Accuracy:	0.7706679311746376
-Average Training Precision:	0.8458116471491008
-Average Training Recall:	0.803048599911345
-Average Training F1:		0.8090236740122323
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
 
-Average Test Accuracy:		0.5951219512195122
-Average Test Precision:		0.6866301169590644
-Average Test Recall:		0.6320532890575585
-Average Test F1:		0.6445974178403755
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
+
+Best Results of Tuner:
+
+Degree: 3
+C: 1e-06
+gamma: 0.1
+Best F1 Score: 0.43983046406608817
+Average Results after Training
+Average Training Accuracy:	0.4470588235294118
+Average Training Precision:	0.6611764705882354
+Average Training Recall:	0.4738636363636363
+Average Training F1:		0.44021359765461404
+
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.22666666666666666
+Average Test Recall:		0.36
+Average Test F1:		0.26000000000000006
 
 Best Results of Tuner:
 
 Degree: 3
 C: 1e-05
-gamma: 0.1
-Best F1 Score: 0.5119205474992956
+gamma: 0.2
+Best F1 Score: 0.42342770016332426
 Average Results after Training
-Average Training Accuracy:	0.7643544235198483
-Average Training Precision:	0.8700185089669009
-Average Training Recall:	0.7738639428835506
-Average Training F1:		0.7670252202398862
+Average Training Accuracy:	0.7647058823529411
+Average Training Precision:	0.9230769230769231
+Average Training Recall:	0.7766233766233765
+Average Training F1:		0.8065622895622896
 
-Average Test Accuracy:		0.5560975609756097
-Average Test Precision:		0.7233058608058609
-Average Test Recall:		0.48866223908918405
-Average Test F1:		0.5460810400340198
+Average Test Accuracy:		0.5333333333333333
+Average Test Precision:		0.4666666666666667
+Average Test Recall:		0.6666666666666667
+Average Test F1:		0.5218181818181817
 
 Best Results of Tuner:
 
 Degree: 3
 C: 1e-05
-gamma: 0.2
-Best F1 Score: 0.5186883074083507
-Average Results after Training
-Average Training Accuracy:	0.8234927516596668
-Average Training Precision:	0.885821073049334
-Average Training Recall:	0.8512665402861481
-Average Training F1:		0.8526690247891289
-
-Average Test Accuracy:		0.5121951219512195
-Average Test Precision:		0.7626899187768753
-Average Test Recall:		0.4838551549652119
-Average Test F1:		0.5342570806100218
-
-Best Results of Tuner:
-
-Degree: 3
-C: 1e-06
 gamma: 0.3
-Best F1 Score: 0.5124012198626696
+Best F1 Score: 0.42793844304363243
 Average Results after Training
-Average Training Accuracy:	0.7181682698821298
-Average Training Precision:	0.8548007338875359
-Average Training Recall:	0.7277616501145913
-Average Training F1:		0.7082060996763104
+Average Training Accuracy:	0.8823529411764707
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.8823051948051948
+Average Training F1:		0.8993174502776021
 
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.5335459861775652
-Average Test Recall:		0.5582186907020873
-Average Test F1:		0.5366730266986022
+Average Test Accuracy:		0.5333333333333333
+Average Test Precision:		0.4666666666666667
+Average Test Recall:		0.7333333333333333
+Average Test F1:		0.5561038961038961
 
 Best Results of Tuner:
 
 Degree: 3
-C: 1e-06
+C: 1e-05
 gamma: 0.4
-Best F1 Score: 0.5243977123426199
+Best F1 Score: 0.43261824599929743
 Average Results after Training
-Average Training Accuracy:	0.7313778620783091
-Average Training Precision:	0.8560568418662067
-Average Training Recall:	0.7442229955955446
-Average Training F1:		0.7267049904564487
+Average Training Accuracy:	0.8941176470588236
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.8948051948051947
+Average Training F1:		0.9057690631808277
 
-Average Test Accuracy:		0.5560975609756097
-Average Test Precision:		0.6791807287163325
-Average Test Recall:		0.5528020240354207
-Average Test F1:		0.5522424242424242
+Average Test Accuracy:		0.5333333333333333
+Average Test Precision:		0.4666666666666667
+Average Test Recall:		0.7333333333333333
+Average Test F1:		0.5561038961038961
 
 Best Results of Tuner:
 
 Degree: 3
-C: 1e-06
+C: 1e-05
 gamma: 0.5
-Best F1 Score: 0.5321439535775169
+Best F1 Score: 0.43261824599929743
 Average Results after Training
-Average Training Accuracy:	0.7412952174502101
-Average Training Precision:	0.8575049104100694
-Average Training Recall:	0.7593184883380962
-Average Training F1:		0.7364920944143476
-
-Average Test Accuracy:		0.5560975609756098
-Average Test Precision:		0.674421347486363
-Average Test Recall:		0.5523987982289691
-Average Test F1:		0.5553855984932566
-
-Best Results of Tuner:
-
-Degree: 3
-C: 1e-06
-gamma: 0.6
-Best F1 Score: 0.5231739379358483
-Average Results after Training
-Average Training Accuracy:	0.7396423248882266
-Average Training Precision:	0.8511609396233741
-Average Training Recall:	0.7593184883380962
-Average Training F1:		0.7348410294307397
-
-Average Test Accuracy:		0.575609756097561
-Average Test Precision:		0.7164499484004128
-Average Test Recall:		0.5594821315623023
-Average Test F1:		0.5780182072829131
-
-Best Results of Tuner:
-
-Degree: 3
-C: 1e-06
-gamma: 0.7
-Best F1 Score: 0.5207473507294584
-Average Results after Training
-Average Training Accuracy:	0.7462538951361604
-Average Training Precision:	0.8588843491751458
-Average Training Recall:	0.7593184883380962
-Average Training F1:		0.738891887974747
-
-Average Test Accuracy:		0.5658536585365853
-Average Test Precision:		0.725359477124183
-Average Test Recall:		0.5271971853257431
-Average Test F1:		0.5642946612326004
-
-Best Results of Tuner:
-
-Degree: 3
-C: 1e-06
-gamma: 0.8
-Best F1 Score: 0.5208142173069558
-Average Results after Training
-Average Training Accuracy:	0.7495325836607506
-Average Training Precision:	0.8615826255391198
-Average Training Recall:	0.7600824302785087
-Average Training F1:		0.7461753593770185
-
-Average Test Accuracy:		0.5512195121951219
-Average Test Precision:		0.7272619047619048
-Average Test Recall:		0.49511385199240987
-Average Test F1:		0.5442384735146215
-
-Best Results of Tuner:
-
-Degree: 3
-C: 1e-06
-gamma: 0.9
-Best F1 Score: 0.521693047255894
-Average Results after Training
-Average Training Accuracy:	0.7577699498712911
-Average Training Precision:	0.8679776926403704
-Average Training Recall:	0.7657967159927944
-Average Training F1:		0.7572667436440471
-
-Average Test Accuracy:		0.5512195121951219
-Average Test Precision:		0.7185439560439562
-Average Test Recall:		0.48866223908918405
-Average Test F1:		0.5440649110017618
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-06
-gamma: 0.1
-Best F1 Score: 0.5078159690707384
-Average Results after Training
-Average Training Accuracy:	0.8697466467958271
-Average Training Precision:	0.9185193011434729
-Average Training Recall:	0.8824506502937876
-Average Training F1:		0.8903084264753318
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.7423391812865496
-Average Test Recall:		0.6075585072738773
-Average Test F1:		0.655862685710911
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-06
-gamma: 0.2
-Best F1 Score: 0.48963179658635486
-Average Results after Training
-Average Training Accuracy:	0.9143341010703157
-Average Training Precision:	0.9508685885747354
-Average Training Recall:	0.914282507615841
-Average Training F1:		0.9266560961463075
-
-Average Test Accuracy:		0.575609756097561
-Average Test Precision:		0.772449128970868
-Average Test Recall:		0.6258617963314358
-Average Test F1:		0.6587494824016563
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.3
-Best F1 Score: 0.4874807813939409
-Average Results after Training
-Average Training Accuracy:	0.8086980083999459
-Average Training Precision:	0.8766440909991534
-Average Training Recall:	0.8462337662337662
-Average Training F1:		0.8377121053224077
-
-Average Test Accuracy:		0.5707317073170732
-Average Test Precision:		0.664967399341265
-Average Test Recall:		0.6274833965844403
-Average Test F1:		0.6371707632530306
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.4
-Best F1 Score: 0.5037124588945479
-Average Results after Training
-Average Training Accuracy:	0.8285191708440591
-Average Training Precision:	0.8854400093370682
-Average Training Recall:	0.8649197860962567
-Average Training F1:		0.8558575155360151
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.6810496339132021
-Average Test Recall:		0.6530115433270083
-Average Test F1:		0.6627879064136736
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.5
-Best F1 Score: 0.5034279569195165
-Average Results after Training
-Average Training Accuracy:	0.8334507519306328
-Average Training Precision:	0.8885335266049401
-Average Training Recall:	0.8681649360080733
-Average Training F1:		0.8612583095335286
-
-Average Test Accuracy:		0.5951219512195123
-Average Test Precision:		0.7053834900731453
-Average Test Recall:		0.6465599304237823
-Average Test F1:		0.6694618155068974
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.6
-Best F1 Score: 0.5148255617159756
-Average Results after Training
-Average Training Accuracy:	0.8483132366887955
-Average Training Precision:	0.9038278623744963
-Average Training Recall:	0.8686691376887457
-Average Training F1:		0.8715008314321004
-
-Average Test Accuracy:		0.6000000000000001
-Average Test Precision:		0.7345116952013504
-Average Test Recall:		0.6209685325743199
-Average Test F1:		0.6671578694529515
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.7
-Best F1 Score: 0.5197327793476817
-Average Results after Training
-Average Training Accuracy:	0.851605473513074
-Average Training Precision:	0.9070973131754118
-Average Training Recall:	0.8689288779484858
-Average Training F1:		0.8744913126505756
-
-Average Test Accuracy:		0.5853658536585366
-Average Test Precision:		0.7389487074644496
-Average Test Recall:		0.606496679316888
-Average Test F1:		0.656099272306966
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.8
-Best F1 Score: 0.522861963344878
-Average Results after Training
-Average Training Accuracy:	0.8565641511990245
-Average Training Precision:	0.9109280812762359
-Average Training Recall:	0.8715262805458884
-Average Training F1:		0.878204712081698
-
-Average Test Accuracy:		0.5951219512195122
-Average Test Precision:		0.7451063429324299
-Average Test Recall:		0.6131633459835547
-Average Test F1:		0.6639335535604509
-
-Best Results of Tuner:
-
-Degree: 4
-C: 1e-07
-gamma: 0.9
-Best F1 Score: 0.5176428116272821
-Average Results after Training
-Average Training Accuracy:	0.8614957322855983
-Average Training Precision:	0.912686966923237
-Average Training Recall:	0.8769961048392421
-Average Training F1:		0.8834399682796317
-
-Average Test Accuracy:		0.5902439024390244
-Average Test Precision:		0.7452740296518409
-Average Test Recall:		0.6073434535104364
-Average Test F1:		0.6588973216405206
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-08
-gamma: 0.1
-Best F1 Score: 0.5680278710086477
-Average Results after Training
-Average Training Accuracy:	0.8516325701124507
-Average Training Precision:	0.8975226172713564
-Average Training Recall:	0.885974025974026
-Average Training F1:		0.8757511568752042
-
-Average Test Accuracy:		0.5073170731707317
-Average Test Precision:		0.7122098725073553
-Average Test Recall:		0.40880613535736876
-Average Test F1:		0.4941090631153388
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-08
-gamma: 0.2
-Best F1 Score: 0.5717013097159303
-Average Results after Training
-Average Training Accuracy:	0.8945400352255792
-Average Training Precision:	0.9236294102019185
-Average Training Recall:	0.9159724226390893
-Average Training F1:		0.9110374555641456
-
-Average Test Accuracy:		0.45853658536585373
-Average Test Precision:		0.7029842706313294
-Average Test Recall:		0.33756957621758377
-Average Test F1:		0.4342875473231592
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-08
-gamma: 0.3
-Best F1 Score: 0.5410522079198021
-Average Results after Training
-Average Training Accuracy:	0.9011651537732014
-Average Training Precision:	0.9293069138420853
-Average Training Recall:	0.9183100849767516
-Average Training F1:		0.9146834637498948
-
-Average Test Accuracy:		0.46829268292682935
-Average Test Precision:		0.7425
-Average Test Recall:		0.34954933586337755
-Average Test F1:		0.45603884364835556
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.4
-Best F1 Score: 0.5521586706449596
-Average Results after Training
-Average Training Accuracy:	0.7939439100392901
-Average Training Precision:	0.8694496027919364
-Average Training Recall:	0.8361038961038961
-Average Training F1:		0.8188327218282779
-
-Average Test Accuracy:		0.5707317073170732
-Average Test Precision:		0.7051971557853911
-Average Test Recall:		0.5507321315623024
-Average Test F1:		0.5758313356690639
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.5
-Best F1 Score: 0.5569946520841066
-Average Results after Training
-Average Training Accuracy:	0.7922774691776182
-Average Training Precision:	0.870507513977105
-Average Training Recall:	0.8314132925897632
-Average Training F1:		0.818142466127037
-
-Average Test Accuracy:		0.551219512195122
-Average Test Precision:		0.7037380952380953
-Average Test Recall:		0.5182321315623024
-Average Test F1:		0.5563330786860199
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.6
-Best F1 Score: 0.5620547366898191
-Average Results after Training
-Average Training Accuracy:	0.8120173418236011
-Average Training Precision:	0.8768706294398946
-Average Training Recall:	0.8540106951871659
-Average Training F1:		0.8419959388532641
-
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.7089673913043478
-Average Test Recall:		0.49886385199240985
-Average Test F1:		0.5483677107206518
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.7
-Best F1 Score: 0.56387041351265
-Average Results after Training
-Average Training Accuracy:	0.8202818046335185
-Average Training Precision:	0.8834271938283509
-Average Training Recall:	0.8566080977845683
-Average Training F1:		0.8476596557810234
-
-Average Test Accuracy:		0.526829268292683
-Average Test Precision:		0.7064935064935065
-Average Test Recall:		0.44794592030360525
-Average Test F1:		0.5173490281842644
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.8
-Best F1 Score: 0.5693908288768237
-Average Results after Training
-Average Training Accuracy:	0.8334778485300095
-Average Training Precision:	0.8888842497930678
-Average Training Recall:	0.8698701298701298
-Average Training F1:		0.8598798449843142
-
-Average Test Accuracy:		0.5170731707317073
-Average Test Precision:		0.7087792207792207
-Average Test Recall:		0.428376027830487
-Average Test F1:		0.5062403542061986
-
-Best Results of Tuner:
-
-Degree: 5
-C: 1e-09
-gamma: 0.9
-Best F1 Score: 0.5687761289701114
-Average Results after Training
-Average Training Accuracy:	0.8433816556022219
-Average Training Precision:	0.8957325268817204
-Average Training Recall:	0.8753246753246753
-Average Training F1:		0.8678705083974384
-
-Average Test Accuracy:		0.5024390243902439
-Average Test Precision:		0.7044176647151476
-Average Test Recall:		0.40880613535736876
-Average Test F1:		0.49159333984489856
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-09
-gamma: 0.1
-Best F1 Score: 0.526139066086974
-Average Results after Training
-Average Training Accuracy:	0.9160005419319874
-Average Training Precision:	0.9420132484262919
-Average Training Recall:	0.9270097803431137
-Average Training F1:		0.9278362700782793
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.7622737262737262
-Average Test Recall:		0.6210555028462997
-Average Test F1:		0.6639032113445851
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.2
-Best F1 Score: 0.5346585996419089
-Average Results after Training
-Average Training Accuracy:	0.8450209998645171
-Average Training Precision:	0.8969981802911533
-Average Training Recall:	0.8757126823793492
-Average Training F1:		0.8698508953828104
-
-Average Test Accuracy:		0.5951219512195123
-Average Test Precision:		0.7115490588039313
-Average Test Recall:		0.5972240670461733
-Average Test F1:		0.6479466055247063
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.3
-Best F1 Score: 0.5270741555290129
-Average Results after Training
-Average Training Accuracy:	0.8582305920606965
-Average Training Precision:	0.9060713518160327
-Average Training Recall:	0.883764630431297
-Average Training F1:		0.880495036602821
-
-Average Test Accuracy:		0.6000000000000001
-Average Test Precision:		0.726249137336094
-Average Test Recall:		0.5905708412397217
-Average Test F1:		0.648414204391434
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.4
-Best F1 Score: 0.5385839025404707
-Average Results after Training
-Average Training Accuracy:	0.8697872916948922
-Average Training Precision:	0.916646968504445
-Average Training Recall:	0.8866217732884399
-Average Training F1:		0.8894263546404731
-
-Average Test Accuracy:		0.6048780487804878
-Average Test Precision:		0.7513285024154589
-Average Test Recall:		0.6016002530044275
-Average Test F1:		0.6630627415997622
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.5
-Best F1 Score: 0.5279329858863339
-Average Results after Training
-Average Training Accuracy:	0.8896084541390055
-Average Training Precision:	0.9160449487371842
-Average Training Recall:	0.9180503447170114
-Average Training F1:		0.9063667384603413
+Average Training Accuracy:	0.9294117647058823
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.9493506493506494
+Average Training F1:		0.9445925925925927
 
 Average Test Accuracy:		0.6
-Average Test Precision:		0.7526460254721125
-Average Test Recall:		0.6069133459835547
-Average Test F1:		0.6644868469364791
+Average Test Precision:		0.6666666666666667
+Average Test Recall:		0.8333333333333334
+Average Test F1:		0.6894372294372295
 
 Best Results of Tuner:
 
-Degree: 6
-C: 1e-10
+Degree: 3
+C: 1e-05
 gamma: 0.6
-Best F1 Score: 0.5311851722920276
+Best F1 Score: 0.4180633805748668
 Average Results after Training
-Average Training Accuracy:	0.8945400352255792
-Average Training Precision:	0.9175904218370118
-Average Training Recall:	0.9237646304312971
-Average Training F1:		0.9115589858344164
-
-Average Test Accuracy:		0.5951219512195122
-Average Test Precision:		0.7572261072261073
-Average Test Recall:		0.6057613851992409
-Average Test F1:		0.6633025910499789
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.7
-Best F1 Score: 0.5262641350536114
-Average Results after Training
-Average Training Accuracy:	0.9027774014361197
-Average Training Precision:	0.9234664296067805
-Average Training Recall:	0.9294789161455828
-Average Training F1:		0.918919377511043
-
-Average Test Accuracy:		0.5902439024390244
-Average Test Precision:		0.7591491841491842
-Average Test Recall:		0.6108594244149272
-Average Test F1:		0.6634189279988254
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.8
-Best F1 Score: 0.5355777946197141
-Average Results after Training
-Average Training Accuracy:	0.9110418642460371
-Average Training Precision:	0.9332527749560807
-Average Training Recall:	0.9294789161455828
-Average Training F1:		0.9243096665921204
-
-Average Test Accuracy:		0.5804878048780489
-Average Test Precision:		0.7534825174825175
-Average Test Recall:		0.6041927577482606
-Average Test F1:		0.6558102167730929
-
-Best Results of Tuner:
-
-Degree: 6
-C: 1e-10
-gamma: 0.9
-Best F1 Score: 0.531957356200511
-Average Results after Training
-Average Training Accuracy:	0.9110418642460371
-Average Training Precision:	0.9353994918125353
-Average Training Recall:	0.9270097803431137
-Average Training F1:		0.9242982560834685
-
-Average Test Accuracy:		0.5804878048780489
-Average Test Precision:		0.7534825174825175
-Average Test Recall:		0.6041927577482606
-Average Test F1:		0.6558102167730929
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-11
-gamma: 0.1
-Best F1 Score: 0.5656381955913831
-Average Results after Training
-Average Training Accuracy:	0.8846497764530552
-Average Training Precision:	0.907988019643151
-Average Training Recall:	0.920647747314414
-Average Training F1:		0.9031328400650465
-
-Average Test Accuracy:		0.5219512195121951
-Average Test Precision:		0.7311148272017838
-Average Test Recall:		0.4409875079063884
-Average Test F1:		0.543002219571987
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-11
-gamma: 0.2
-Best F1 Score: 0.5631527208316476
-Average Results after Training
-Average Training Accuracy:	0.8978322720498577
-Average Training Precision:	0.9192703812026846
-Average Training Recall:	0.92662177328844
-Average Training F1:		0.9145820362895918
-
-Average Test Accuracy:		0.4926829268292683
-Average Test Precision:		0.7074845977820806
-Average Test Recall:		0.4029728020240354
-Average Test F1:		0.5044922878712208
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.3
-Best F1 Score: 0.5613318147469615
-Average Results after Training
-Average Training Accuracy:	0.831824955968026
-Average Training Precision:	0.8886849073256841
-Average Training Recall:	0.8698701298701298
-Average Training F1:		0.8591317821183951
-
-Average Test Accuracy:		0.575609756097561
-Average Test Precision:		0.7337488947833776
-Average Test Recall:		0.531377292852625
-Average Test F1:		0.6058830526597166
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.4
-Best F1 Score: 0.5632065013001608
-Average Results after Training
-Average Training Accuracy:	0.859924129521745
-Average Training Precision:	0.8944920151953083
-Average Training Recall:	0.9010389610389611
-Average Training F1:		0.8810552614499301
-
-Average Test Accuracy:		0.5609756097560976
-Average Test Precision:		0.7391148272017837
-Average Test Recall:		0.4993208412397217
-Average Test F1:		0.5889347431887212
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.5
-Best F1 Score: 0.5599917387368742
-Average Results after Training
-Average Training Accuracy:	0.866535699769679
-Average Training Precision:	0.9012806613772636
-Average Training Recall:	0.9011672278338946
-Average Training F1:		0.885411208346988
-
-Average Test Accuracy:		0.5609756097560976
-Average Test Precision:		0.7399792960662526
-Average Test Recall:		0.4997375079063883
-Average Test F1:		0.5911887926887928
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.6
-Best F1 Score: 0.559957753520661
-Average Results after Training
-Average Training Accuracy:	0.8681885923316625
-Average Training Precision:	0.9004314371096755
-Average Training Recall:	0.903764630431297
-Average Training F1:		0.8863977137881646
-
-Average Test Accuracy:		0.5414634146341464
-Average Test Precision:		0.7336384439359268
-Average Test Recall:		0.4743208412397217
-Average Test F1:		0.571245781522062
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.7
-Best F1 Score: 0.5595406582209766
-Average Results after Training
-Average Training Accuracy:	0.873120173418236
-Average Training Precision:	0.90019937907659
-Average Training Recall:	0.9120763187429854
-Average Training F1:		0.8921299235429669
-
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.7429951690821255
-Average Test Recall:		0.47473750790638836
-Average Test F1:		0.5752065527065527
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.8
-Best F1 Score: 0.5619375096029213
-Average Results after Training
-Average Training Accuracy:	0.876425958542203
-Average Training Precision:	0.9044474594015599
-Average Training Recall:	0.9120763187429854
-Average Training F1:		0.8944640447829787
-
-Average Test Accuracy:		0.5414634146341464
-Average Test Precision:		0.748204270266459
-Average Test Recall:		0.46140417457305505
-Average Test F1:		0.5654814203781664
-
-Best Results of Tuner:
-
-Degree: 7
-C: 1e-12
-gamma: 0.9
-Best F1 Score: 0.559918788954967
-Average Results after Training
-Average Training Accuracy:	0.8813710879284649
-Average Training Precision:	0.907988019643151
-Average Training Recall:	0.9149334616001283
-Average Training F1:		0.8987468751527656
-
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.74978321763488
-Average Test Recall:		0.467654174573055
-Average Test F1:		0.5707604550689658
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-13
-gamma: 0.1
-Best F1 Score: 0.5285687441050193
-Average Results after Training
-Average Training Accuracy:	0.8632299146457119
-Average Training Precision:	0.893179117147708
-Average Training Recall:	0.9089594356261023
-Average Training F1:		0.8841104442286895
+Average Training Accuracy:	0.9294117647058823
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.9493506493506494
+Average Training F1:		0.9445925925925927
 
 Average Test Accuracy:		0.6
-Average Test Precision:		0.7250742959430362
-Average Test Recall:		0.5834875079063884
-Average Test F1:		0.6432402020637314
+Average Test Precision:		0.7
+Average Test Recall:		0.7933333333333332
+Average Test F1:		0.6853968253968253
 
 Best Results of Tuner:
 
-Degree: 8
-C: 1e-13
-gamma: 0.2
-Best F1 Score: 0.547064375902131
-Average Results after Training
-Average Training Accuracy:	0.8780382062051213
-Average Training Precision:	0.8982969788731203
-Average Training Recall:	0.9232451499118166
-Average Training F1:		0.8988722329658614
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.7330095990965557
-Average Test Recall:		0.5765022137887412
-Average Test F1:		0.640990220990221
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-13
-gamma: 0.3
-Best F1 Score: 0.5409415338283674
-Average Results after Training
-Average Training Accuracy:	0.8829968838910716
-Average Training Precision:	0.9038457318411236
-Average Training Recall:	0.9232451499118166
-Average Training F1:		0.9020573751088218
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.739358805445762
-Average Test Recall:		0.5698355471220746
-Average Test F1:		0.6388041262133272
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-13
-gamma: 0.4
-Best F1 Score: 0.5369493019353665
-Average Results after Training
-Average Training Accuracy:	0.8928871426635958
-Average Training Precision:	0.9132387705280367
-Average Training Recall:	0.9263620330286997
-Average Training F1:		0.9104390569100074
-
-Average Test Accuracy:		0.5853658536585367
-Average Test Precision:		0.7398647342995169
-Average Test Recall:		0.5949335863377608
-Average Test F1:		0.6521910096002106
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-13
-gamma: 0.5
-Best F1 Score: 0.5239324589007127
-Average Results after Training
-Average Training Accuracy:	0.8961793794878743
-Average Training Precision:	0.9151923724816386
-Average Training Recall:	0.9292191758858426
-Average Training F1:		0.9135901192346653
-
-Average Test Accuracy:		0.5902439024390245
-Average Test Precision:		0.7456618357487923
-Average Test Recall:		0.6066982922201138
-Average Test F1:		0.6602397900880155
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-13
-gamma: 0.6
-Best F1 Score: 0.5199881026038286
-Average Results after Training
-Average Training Accuracy:	0.9060696382603982
-Average Training Precision:	0.9246822326609561
-Average Training Recall:	0.9324643257976591
-Average Training F1:		0.921756488554348
-
-Average Test Accuracy:		0.6048780487804878
-Average Test Precision:		0.7647094547964113
-Average Test Recall:		0.647090449082859
-Average Test F1:		0.6837556354505507
-
-Best Results of Tuner:
-
-Degree: 8
-C: 1e-14
+Degree: 3
+C: 1e-05
 gamma: 0.7
-Best F1 Score: 0.5156425774027807
+Best F1 Score: 0.4336531241646104
 Average Results after Training
-Average Training Accuracy:	0.8450480964638938
-Average Training Precision:	0.8992464539007093
-Average Training Recall:	0.8750649350649351
-Average Training F1:		0.8681052543951824
+Average Training Accuracy:	0.9294117647058823
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.9493506493506494
+Average Training F1:		0.9445925925925927
 
-Average Test Accuracy:		0.5951219512195123
-Average Test Precision:		0.7010542322421677
-Average Test Recall:		0.6030439595192917
-Average Test F1:		0.6462268098399995
+Average Test Accuracy:		0.5999999999999999
+Average Test Precision:		0.7333333333333333
+Average Test Recall:		0.7133333333333333
+Average Test F1:		0.6552380952380953
 
 Best Results of Tuner:
 
-Degree: 8
-C: 1e-14
+Degree: 3
+C: 1e-06
 gamma: 0.8
-Best F1 Score: 0.5205887536174579
+Best F1 Score: 0.41900739565282297
 Average Results after Training
-Average Training Accuracy:	0.8516596667118275
-Average Training Precision:	0.901008064516129
-Average Training Recall:	0.8828571428571429
-Average Training F1:		0.8737801505344747
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.8666666666666668
+Average Training Recall:	0.571482683982684
+Average Training F1:		0.583113864692812
 
-Average Test Accuracy:		0.5902439024390245
-Average Test Precision:		0.7039720041254569
-Average Test Recall:		0.5901407337128399
-Average Test F1:		0.6402618975592977
+Average Test Accuracy:		0.4666666666666666
+Average Test Precision:		0.33333333333333337
+Average Test Recall:		0.5
+Average Test F1:		0.38181818181818183
 
 Best Results of Tuner:
 
-Degree: 8
-C: 1e-14
+Degree: 3
+C: 1e-07
 gamma: 0.9
-Best F1 Score: 0.5261876073037061
+Best F1 Score: 0.4332503774860016
 Average Results after Training
-Average Training Accuracy:	0.8648828072076956
-Average Training Precision:	0.8935080645161291
-Average Training Recall:	0.9114285714285714
-Average Training F1:		0.8853431098681348
+Average Training Accuracy:	0.5529411764705883
+Average Training Precision:	0.6611764705882354
+Average Training Recall:	0.5806818181818182
+Average Training F1:		0.5281609195402298
 
-Average Test Accuracy:		0.5902439024390245
-Average Test Precision:		0.709100209253662
-Average Test Recall:		0.5836891208096142
-Average Test F1:		0.6383480219612115
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.41666666666666663
+Average Test Recall:		0.38666666666666666
+Average Test F1:		0.3333333333333333
 
 Best Results of Tuner:
 
-Degree: 9
-C: 1e-14
+Degree: 4
+C: 1e-06
 gamma: 0.1
-Best F1 Score: 0.5707292973337463
+Best F1 Score: 0.4255915986466271
 Average Results after Training
-Average Training Accuracy:	0.8862891207153503
-Average Training Precision:	0.9073007427114511
-Average Training Recall:	0.9235048901715569
-Average Training F1:		0.9050207496984107
+Average Training Accuracy:	0.8352941176470589
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.8233766233766234
+Average Training F1:		0.8586310160427807
 
-Average Test Accuracy:		0.551219512195122
-Average Test Precision:		0.7452173913043479
-Average Test Recall:		0.467654174573055
-Average Test F1:		0.5721421554180175
+Average Test Accuracy:		0.4666666666666667
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.4618181818181818
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-74
+gamma: 0.2
+Best F1 Score: 0.41153459032515827
+Average Results after Training
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
+
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-08
+gamma: 0.3
+Best F1 Score: 0.413554239830776
+Average Results after Training
+Average Training Accuracy:	0.4588235294117647
+Average Training Precision:	0.8611764705882354
+Average Training Recall:	0.489935064935065
+Average Training F1:		0.4715001473622163
+
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.3
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.3484848484848485
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-74
+gamma: 0.4
+Best F1 Score: 0.41153459032515827
+Average Results after Training
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
+
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-74
+gamma: 0.5
+Best F1 Score: 0.41153459032515827
+Average Results after Training
+Average Training Accuracy:	0.5411764705882354
+Average Training Precision:	0.4352941176470589
+Average Training Recall:	0.6
+Average Training F1:		0.4979181737802428
+
+Average Test Accuracy:		0.4
+Average Test Precision:		0.3
+Average Test Recall:		0.6
+Average Test F1:		0.39333333333333337
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-07
+gamma: 0.6
+Best F1 Score: 0.4236194932518462
+Average Results after Training
+Average Training Accuracy:	0.7058823529411764
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.6727272727272727
+Average Training F1:		0.7453333333333333
+
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.31333333333333335
+Average Test Recall:		0.5333333333333333
+Average Test F1:		0.38181818181818183
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-08
+gamma: 0.7
+Best F1 Score: 0.41955422160592937
+Average Results after Training
+Average Training Accuracy:	0.49411764705882344
+Average Training Precision:	0.8771428571428572
+Average Training Recall:	0.5018398268398269
+Average Training F1:		0.5141025641025642
+
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.3
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.3484848484848485
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-07
+gamma: 0.8
+Best F1 Score: 0.4344486988343725
+Average Results after Training
+Average Training Accuracy:	0.7882352941176471
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.7733766233766234
+Average Training F1:		0.8300595874713522
+
+Average Test Accuracy:		0.4333333333333333
+Average Test Precision:		0.31333333333333335
+Average Test Recall:		0.5333333333333333
+Average Test F1:		0.38181818181818183
+
+Best Results of Tuner:
+
+Degree: 4
+C: 1e-07
+gamma: 0.9
+Best F1 Score: 0.43061805367308215
+Average Results after Training
+Average Training Accuracy:	0.8117647058823529
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.7983766233766234
+Average Training F1:		0.8452976827094474
+
+Average Test Accuracy:		0.4666666666666667
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.4618181818181818
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-06
+gamma: 0.1
+Best F1 Score: 0.4340911162800218
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.6333333333333333
+Average Test Precision:		0.7333333333333332
+Average Test Recall:		0.6733333333333333
+Average Test F1:		0.6399999999999999
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.2
+Best F1 Score: 0.4824214665623334
+Average Results after Training
+Average Training Accuracy:	0.8235294117647058
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.827922077922078
+Average Training F1:		0.8688831168831168
+
+Average Test Accuracy:		0.6
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8333333333333334
+Average Test F1:		0.6894372294372294
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.3
+Best F1 Score: 0.4424062049062049
+Average Results after Training
+Average Training Accuracy:	0.9058823529411765
+Average Training Precision:	0.93006993006993
+Average Training Recall:	0.938961038961039
+Average Training F1:		0.9298181818181817
+
+Average Test Accuracy:		0.6333333333333334
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8833333333333334
+Average Test F1:		0.7275324675324676
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.4
+Best F1 Score: 0.4512550581293629
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.6333333333333334
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8833333333333334
+Average Test F1:		0.7275324675324676
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.5
+Best F1 Score: 0.4512550581293629
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.6933333333333332
+Average Test Recall:		0.7633333333333333
+Average Test F1:		0.6599999999999999
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.6
+Best F1 Score: 0.4411380990650354
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5333333333333333
+Average Test Precision:		0.6933333333333332
+Average Test Recall:		0.7233333333333334
+Average Test F1:		0.6123809523809524
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-07
+gamma: 0.7
+Best F1 Score: 0.4340911162800218
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.6333333333333333
+Average Test Precision:		0.7333333333333332
+Average Test Recall:		0.6733333333333333
+Average Test F1:		0.6399999999999999
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-08
+gamma: 0.8
+Best F1 Score: 0.44565558158251795
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5333333333333333
+Average Test Recall:		0.6166666666666667
+Average Test F1:		0.5447619047619047
+
+Best Results of Tuner:
+
+Degree: 5
+C: 1e-07
+gamma: 0.9
+Best F1 Score: 0.4340911162800218
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.6333333333333333
+Average Test Precision:		0.7333333333333332
+Average Test Recall:		0.6733333333333333
+Average Test F1:		0.6399999999999999
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-08
+gamma: 0.1
+Best F1 Score: 0.4465371470663298
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.6000000000000001
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.6333333333333333
+Average Test F1:		0.5627705627705628
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-09
+gamma: 0.2
+Best F1 Score: 0.4209087945523037
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5333333333333334
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5532467532467533
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-10
+gamma: 0.3
+Best F1 Score: 0.43777003329701125
+Average Results after Training
+Average Training Accuracy:	0.7176470588235294
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.6983766233766234
+Average Training F1:		0.7677219251336899
+
+Average Test Accuracy:		0.5000000000000001
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.6333333333333333
+Average Test F1:		0.5151515151515151
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-09
+gamma: 0.4
+Best F1 Score: 0.4451787973253818
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5333333333333334
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5675324675324676
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-10
+gamma: 0.5
+Best F1 Score: 0.4514129845486582
+Average Results after Training
+Average Training Accuracy:	0.8
+Average Training Precision:	0.93006993006993
+Average Training Recall:	0.8211038961038961
+Average Training F1:		0.8531188811188812
+
+Average Test Accuracy:		0.5333333333333334
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5532467532467533
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-09
+gamma: 0.6
+Best F1 Score: 0.4641275092887996
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.6000000000000001
+Average Test Precision:		0.5466666666666666
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5818181818181818
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-09
+gamma: 0.7
+Best F1 Score: 0.4771791595501273
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-09
+gamma: 0.8
+Best F1 Score: 0.4553612577382666
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 6
+C: 1e-10
+gamma: 0.9
+Best F1 Score: 0.48122265084693927
+Average Results after Training
+Average Training Accuracy:	0.8941176470588236
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	0.9285714285714285
+Average Training F1:		0.9198260869565218
+
+Average Test Accuracy:		0.5333333333333334
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5532467532467533
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-10
+gamma: 0.1
+Best F1 Score: 0.4547048005627714
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5333333333333333
+Average Test Precision:		0.5
+Average Test Recall:		0.5166666666666667
+Average Test F1:		0.4914285714285714
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-09
+gamma: 0.2
+Best F1 Score: 0.45120433511737856
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.5
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.4533333333333333
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-09
+gamma: 0.3
+Best F1 Score: 0.45702704182243825
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.5
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.4533333333333333
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-10
+gamma: 0.4
+Best F1 Score: 0.46145293177551244
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.6
+Average Test Precision:		0.5333333333333333
+Average Test Recall:		0.5666666666666667
+Average Test F1:		0.5399999999999999
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-12
+gamma: 0.5
+Best F1 Score: 0.4462312358858165
+Average Results after Training
+Average Training Accuracy:	0.7176470588235294
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.6983766233766234
+Average Training F1:		0.7677219251336899
+
+Average Test Accuracy:		0.6
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8333333333333334
+Average Test F1:		0.6894372294372294
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-12
+gamma: 0.6
+Best F1 Score: 0.4696055582040009
+Average Results after Training
+Average Training Accuracy:	0.7294117647058823
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.7165584415584416
+Average Training F1:		0.7821010101010101
+
+Average Test Accuracy:		0.6
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8333333333333334
+Average Test F1:		0.6894372294372294
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-12
+gamma: 0.7
+Best F1 Score: 0.4696055582040009
+Average Results after Training
+Average Training Accuracy:	0.7529411764705882
+Average Training Precision:	0.93006993006993
+Average Training Recall:	0.7711038961038961
+Average Training F1:		0.8083636363636364
+
+Average Test Accuracy:		0.6333333333333334
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8833333333333334
+Average Test F1:		0.7275324675324676
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-14
+gamma: 0.8
+Best F1 Score: 0.4762563710799005
+Average Results after Training
+Average Training Accuracy:	0.5058823529411764
+Average Training Precision:	0.8800000000000001
+Average Training Recall:	0.5185064935064935
+Average Training F1:		0.5226495726495727
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.35333333333333333
+Average Test Recall:		0.55
+Average Test F1:		0.41515151515151516
+
+Best Results of Tuner:
+
+Degree: 7
+C: 1e-14
+gamma: 0.9
+Best F1 Score: 0.44993503228797344
+Average Results after Training
+Average Training Accuracy:	0.5058823529411764
+Average Training Precision:	0.8800000000000001
+Average Training Recall:	0.5185064935064935
+Average Training F1:		0.5226495726495727
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.35333333333333333
+Average Test Recall:		0.55
+Average Test F1:		0.41515151515151516
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-11
+gamma: 0.1
+Best F1 Score: 0.5113742100811066
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.6000000000000001
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.6333333333333333
+Average Test F1:		0.5627705627705628
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.2
+Best F1 Score: 0.5151305421158363
+Average Results after Training
+Average Training Accuracy:	0.9529411764705882
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	1.0
+Average Training F1:		0.963304347826087
+
+Average Test Accuracy:		0.5333333333333334
+Average Test Precision:		0.5133333333333334
+Average Test Recall:		0.6833333333333333
+Average Test F1:		0.5532467532467533
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-11
+gamma: 0.3
+Best F1 Score: 0.49164039974882434
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.45
+Average Test Recall:		0.5333333333333333
+Average Test F1:		0.47705627705627707
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-11
+gamma: 0.4
+Best F1 Score: 0.4964241983257264
+Average Results after Training
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.45
+Average Test Recall:		0.5333333333333333
+Average Test F1:		0.47705627705627707
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.5
+Best F1 Score: 0.47627924494859974
+Average Results after Training
+Average Training Accuracy:	0.9764705882352942
+Average Training Precision:	0.9679487179487178
+Average Training Recall:	1.0
+Average Training F1:		0.9833043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.6
+Best F1 Score: 0.5082451414403584
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.7
+Best F1 Score: 0.5213443474705989
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.8
+Best F1 Score: 0.5287734774803741
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.5666666666666667
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.5833333333333333
+Average Test F1:		0.5341991341991342
+
+Best Results of Tuner:
+
+Degree: 8
+C: 1e-12
+gamma: 0.9
+Best F1 Score: 0.5113742100811066
+Average Results after Training
+Average Training Accuracy:	0.9882352941176471
+Average Training Precision:	0.9833333333333332
+Average Training Recall:	1.0
+Average Training F1:		0.9913043478260869
+
+Average Test Accuracy:		0.6000000000000001
+Average Test Precision:		0.5166666666666667
+Average Test Recall:		0.6333333333333333
+Average Test F1:		0.5627705627705628
+
+Best Results of Tuner:
+
+Degree: 9
+C: 1e-15
+gamma: 0.1
+Best F1 Score: 0.46978687911537276
+Average Results after Training
+Average Training Accuracy:	0.7176470588235294
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.6983766233766234
+Average Training F1:		0.7677219251336899
+
+Average Test Accuracy:		0.5
+Average Test Precision:		0.6166666666666667
+Average Test Recall:		0.7166666666666667
+Average Test F1:		0.578961038961039
 
 Best Results of Tuner:
 
 Degree: 9
 C: 1e-15
 gamma: 0.2
-Best F1 Score: 0.5667832458828579
+Best F1 Score: 0.5140416008002214
 Average Results after Training
-Average Training Accuracy:	0.8599105812220567
-Average Training Precision:	0.8837172033392964
-Average Training Recall:	0.9142857142857143
-Average Training F1:		0.8826139632784116
+Average Training Accuracy:	0.7294117647058823
+Average Training Precision:	0.9482517482517483
+Average Training Recall:	0.7165584415584416
+Average Training F1:		0.7821010101010101
 
-Average Test Accuracy:		0.5804878048780489
-Average Test Precision:		0.7274317738791424
-Average Test Recall:		0.5449391208096142
-Average Test F1:		0.6204417890422733
+Average Test Accuracy:		0.6
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8333333333333334
+Average Test F1:		0.6894372294372294
 
 Best Results of Tuner:
 
 Degree: 9
 C: 1e-15
 gamma: 0.3
-Best F1 Score: 0.5561471297028541
+Best F1 Score: 0.5140416008002214
 Average Results after Training
-Average Training Accuracy:	0.864869258908007
-Average Training Precision:	0.8902304743472482
-Average Training Recall:	0.911816578483245
-Average Training F1:		0.8853846855553977
+Average Training Accuracy:	0.7647058823529411
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	0.7892857142857143
+Average Training F1:		0.8178498023715415
 
-Average Test Accuracy:		0.551219512195122
-Average Test Precision:		0.7184903381642512
-Average Test Recall:		0.5068208412397217
-Average Test F1:		0.5921952861952862
+Average Test Accuracy:		0.6666666666666667
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.9333333333333333
+Average Test F1:		0.7561038961038961
 
 Best Results of Tuner:
 
 Degree: 9
 C: 1e-15
 gamma: 0.4
-Best F1 Score: 0.5603001550408798
+Best F1 Score: 0.4682783882783883
 Average Results after Training
-Average Training Accuracy:	0.8681614957322855
-Average Training Precision:	0.8921108162275901
-Average Training Recall:	0.9146737213403882
-Average Training F1:		0.8887756922398176
+Average Training Accuracy:	0.7647058823529411
+Average Training Precision:	0.9315850815850816
+Average Training Recall:	0.7892857142857143
+Average Training F1:		0.8178498023715415
 
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.7243280355620509
-Average Test Recall:		0.4943208412397217
-Average Test F1:		0.584797624309467
+Average Test Accuracy:		0.6333333333333334
+Average Test Precision:		0.6599999999999999
+Average Test Recall:		0.8833333333333334
+Average Test F1:		0.7275324675324676
 
 Best Results of Tuner:
 
 Degree: 9
-C: 1e-15
+C: 1e-13
 gamma: 0.5
-Best F1 Score: 0.584292629991442
+Best F1 Score: 0.47398926822489235
 Average Results after Training
-Average Training Accuracy:	0.8747459693808427
-Average Training Precision:	0.8959997051164791
-Average Training Recall:	0.9203880070546738
-Average Training F1:		0.8954758628147166
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
 
-Average Test Accuracy:		0.5414634146341464
-Average Test Precision:		0.7313765391740221
-Average Test Recall:		0.48098750790638833
-Average Test F1:		0.575816488592769
+Average Test Accuracy:		0.6
+Average Test Precision:		0.5333333333333333
+Average Test Recall:		0.5666666666666667
+Average Test F1:		0.5399999999999999
 
 Best Results of Tuner:
 
 Degree: 9
-C: 1e-15
+C: 1e-13
 gamma: 0.6
-Best F1 Score: 0.5787560029188851
+Best F1 Score: 0.49660831584394
 Average Results after Training
-Average Training Accuracy:	0.8730930768188593
-Average Training Precision:	0.8957123487946399
-Average Training Recall:	0.9177906044572712
-Average Training F1:		0.8941750498065865
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
 
-Average Test Accuracy:		0.5365853658536586
-Average Test Precision:		0.7271291560102302
-Average Test Recall:		0.4743208412397217
-Average Test F1:		0.5704139044564577
+Average Test Accuracy:		0.6
+Average Test Precision:		0.5333333333333333
+Average Test Recall:		0.5666666666666667
+Average Test F1:		0.5399999999999999
 
 Best Results of Tuner:
 
 Degree: 9
-C: 1e-15
+C: 1e-12
 gamma: 0.7
-Best F1 Score: 0.575264443285295
+Best F1 Score: 0.4745080101294935
 Average Results after Training
-Average Training Accuracy:	0.8780382062051212
-Average Training Precision:	0.8998505943093654
-Average Training Recall:	0.920647747314414
-Average Training F1:		0.8986522407398617
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
 
-Average Test Accuracy:		0.5365853658536586
-Average Test Precision:		0.7268840579710145
-Average Test Recall:		0.4743208412397217
-Average Test F1:		0.5701595103769017
+Average Test Accuracy:		0.4666666666666666
+Average Test Precision:		0.4333333333333333
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.43428571428571433
 
 Best Results of Tuner:
 
 Degree: 9
-C: 1e-15
+C: 1e-13
 gamma: 0.8
-Best F1 Score: 0.5765513021337911
+Best F1 Score: 0.4801614795055575
 Average Results after Training
-Average Training Accuracy:	0.8796910987671047
-Average Training Precision:	0.9016028103472957
-Average Training Recall:	0.920647747314414
-Average Training F1:		0.8996619817709857
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
 
-Average Test Accuracy:		0.5463414634146342
-Average Test Precision:		0.735812629399586
-Average Test Recall:		0.4743208412397217
-Average Test F1:		0.5740695788030992
+Average Test Accuracy:		0.4666666666666666
+Average Test Precision:		0.4333333333333333
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.43428571428571433
 
 Best Results of Tuner:
 
 Degree: 9
-C: 1e-15
+C: 1e-12
 gamma: 0.9
-Best F1 Score: 0.5704679790397988
+Best F1 Score: 0.4667918744133578
 Average Results after Training
-Average Training Accuracy:	0.8796910987671047
-Average Training Precision:	0.9016028103472957
-Average Training Recall:	0.920647747314414
-Average Training F1:		0.8996619817709857
+Average Training Accuracy:	1.0
+Average Training Precision:	1.0
+Average Training Recall:	1.0
+Average Training F1:		1.0
 
-Average Test Accuracy:		0.5414634146341464
-Average Test Precision:		0.733312629399586
-Average Test Recall:		0.467654174573055
-Average Test F1:		0.5676927672088963
+Average Test Accuracy:		0.4666666666666666
+Average Test Precision:		0.4333333333333333
+Average Test Recall:		0.4666666666666667
+Average Test F1:		0.43428571428571433
