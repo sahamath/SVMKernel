@@ -32,10 +32,10 @@ def get_exp_preprocessing(data_f, alpha=0.9):
     return edata
 
 
-def feature_extraction(data_arg):
+def feature_extraction(data_arg,horizon):
     """Extracts the important features necessary for classification"""
     data = data_arg.copy()
-    for x in [5, 14, 26, 44, 66]:
+    for x in [horizon]:
         data = ta.relative_strength_index(data, n=x)
         data = ta.stochastic_oscillator_d(data, n=x)
         data = ta.accumulation_distribution(data, n=x)
@@ -49,10 +49,8 @@ def feature_extraction(data_arg):
         data = ta.trix(data, n=x)
         data = ta.vortex_indicator(data, n=x)
 
-    data["ema50"] = data["Close"] / data["Close"].ewm(50).mean()
-    data["ema21"] = data["Close"] / data["Close"].ewm(21).mean()
-    data["ema14"] = data["Close"] / data["Close"].ewm(14).mean()
-    data["ema5"] = data["Close"] / data["Close"].ewm(5).mean()
+    data["ema"+str(horizon)] = data["Close"] / data["Close"].ewm(horizon).mean()
+    
 
     data = ta.macd(data, n_fast=12, n_slow=26)
 
@@ -74,7 +72,7 @@ def compute_prediction_int(df, n):
 def prepare_data(data_f, horizon, alpha=0.9):
     aapl = data_f.copy()
     saapl = get_exp_preprocessing(aapl, alpha)
-    data = feature_extraction(saapl).dropna().iloc[:-horizon]
+    data = feature_extraction(saapl,horizon).dropna().iloc[:-horizon]
     data["pred"] = compute_prediction_int(data, n=horizon)
     del data["Close"]
     return data.dropna()

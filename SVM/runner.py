@@ -5,8 +5,8 @@ import csv
 
 
 class args:
-    path = "dataset/sensexData/sensex_weekly_2000_2007.csv"
-    trading_days = 1
+    path = "dataset/sensexData/sensex_daily_2000_2007.csv"
+    trading_days = 7
     kernel = "cobb-douglas"
     degree = 3
     C = [10 ** i for i in range(-100, 100)]
@@ -27,9 +27,9 @@ writer.writerow(
 print("Tuning and results for cobb-douglas: \n")
 degrees = [2, 3, 4, 5, 6, 7, 8, 9]
 # degrees = [2]
-tradingDays = [1]
+tradingDays = [5]
 kernel = "cobb-douglas"
-gammas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+gammas = [0.1]
 # gammas = [0.1]
 print("Lets start this:\n")
 for degree in degrees:

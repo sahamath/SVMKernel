@@ -76,8 +76,8 @@ def tuner(args, f, writer):
 
     # load the dataset
     df = load_csv(path)
-    data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9,)
-    # print(data)
+    data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9)
+    print(data)
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
