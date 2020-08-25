@@ -77,17 +77,15 @@ def tuner(args, f, writer):
     # load the dataset
     df = load_csv(path)
     data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9)
-    print(data)
+    
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
-    dataA = np.array_split(data[features], 1)
+    dataA = np.array_split(data[features], folds)
 
-    features = [x for x in data.columns if x not in ["gain", "pred"]]
-    X = np.array(dataA[0][features])
-    y = np.array(dataA[0]["pred"])
+    
 
-    tscv = TimeSeriesSplit(n_splits=folds)
+    # tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
 
     # print("\n")
@@ -95,15 +93,20 @@ def tuner(args, f, writer):
     for C in param_grid["svc__C"]:
 
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
-        i = 0
+        
 
-        for tr_index, val_index in tscv.split(X):
+        for i in tqdm(range(folds)):
 
             # print("Fold #" + str(i + 1))
             # print("\n")
+            features = [x for x in data.columns if x not in ["gain", "pred"]]
+            X = np.array(dataA[i][features])
+            y = np.array(dataA[i]["pred"])
+            X_train = X[: int(train_test_ratio * len(X))]
+            y_train = y[: int(train_test_ratio * len(y))]
 
-            X_train, X_test = X[tr_index], X[val_index]
-            y_train, y_test = y[tr_index], y[val_index]
+            X_test = X[int(train_test_ratio * len(X)) :]
+            y_test = y[int(train_test_ratio * len(y)) :]
 
             if kernel == "custom":
                 clf = make_pipeline(
@@ -162,24 +165,24 @@ def tuner(args, f, writer):
 
     # print(metrics)
     # print("\n")
-    max_f1_C = list(metrics.keys())[0]
+    max_recall_C = list(metrics.keys())[0]
     for C in metrics:
-        if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
-            max_f1_C = C
+        if mean(metrics[C]["recall"]) > mean(metrics[max_recall_C]["recall"]):
+            max_recall_C = C
         # print("\n")
 
     print("Best Results:\n")
-    print(max_f1_C)
-    print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
+    print(max_recall_C)
+    print("recall: " + str(mean(metrics[max_recall_C]["recall"])))
 
     f.write("\n\nBest Results of Tuner:\n")
     f.write("\nDegree: " + str(args.degree))
-    f.write("\nC: " + str(max_f1_C))
+    f.write("\nC: " + str(max_recall_C))
     f.write("\ngamma: " + str(gamma))
-    f.write("\nBest F1 Score: " + str(mean(metrics[max_f1_C]["f1"])))
+    f.write("\nBest Recall Score: " + str(mean(metrics[max_recall_C]["recall"])))
 
     args1 = args
-    args1.currC = max_f1_C
+    args1.currC = max_recall_C
     trainer(args1, f, writer)
 
 

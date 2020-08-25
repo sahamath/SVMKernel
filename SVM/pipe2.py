@@ -271,8 +271,8 @@ def trainer(args, f, writer):
             degree,
             gamma,
             C,
-            train_f1 / no_of_subsamples,
-            test_f1 / no_of_subsamples,
+            train_recall / no_of_subsamples,
+            test_recall / no_of_subsamples,
             train_acc / no_of_subsamples,
             test_acc / no_of_subsamples,
         ]

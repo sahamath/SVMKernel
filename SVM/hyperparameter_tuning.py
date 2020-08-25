@@ -136,37 +136,38 @@ def main():
     # load the dataset
     df = load_csv(path)
     data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9,)
-    print(data)
+    
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
-    dataA = np.array_split(data[features], 1)
+    dataA = np.array_split(data[features], folds)
 
     features = [x for x in data.columns if x not in ["gain", "pred"]]
     X = np.array(dataA[0][features])
     y = np.array(dataA[0]["pred"])
 
-    tscv = TimeSeriesSplit(n_splits=folds)
+    # tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
 
     print("\n")
     metrics = {}
     for C in param_grid["svc__C"]:
-
-        print("Performing Grid (Time Series) Search on:\n")
-        print("C: " + str(C))
-        print("gamma: " + str(gamma))
-
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
-        i = 0
-
-        for tr_index, val_index in tscv.split(X):
-
+        for i in tqdm(range(no_of_subsamples)):
+            features = [x for x in data.columns if x not in ["gain", "pred"]]
+            X = dataA[i][features]
+            y = dataA[i]["pred"]
+            print("Performing Grid (Time Series) Search on:\n")
+            print("C: " + str(C))
+            print("gamma: " + str(gamma))
             print("Fold #" + str(i + 1))
             print("\n")
 
-            X_train, X_test = X[tr_index], X[val_index]
-            y_train, y_test = y[tr_index], y[val_index]
+            X_train = X[: int(train_test_ratio * len(X))]
+            y_train = y[: int(train_test_ratio * len(y))]
+
+            X_test = X[int(train_test_ratio * len(X)) :]
+            y_test = y[int(train_test_ratio * len(y)) :]
 
             if kernel == "custom":
                 clf = make_pipeline(
@@ -224,23 +225,23 @@ def main():
 
     print(metrics)
     print("\n")
-    max_f1_C = list(metrics.keys())[0]
+    max_recall_C = list(metrics.keys())[0]
     for C in metrics:
         print("For regularisation parameter: " + str(C))
         print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
         print("Precision: " + str(mean(metrics[C]["precision"])))
         print("Recall: " + str(mean(metrics[C]["recall"])))
         print("F1: " + str(mean(metrics[C]["f1"])))
-        if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
-            max_f1_C = C
+        if mean(metrics[C]["recall"]) > mean(metrics[max_recall_C]["recall"]):
+            max_recall_C = C
         print("\n")
 
     print("Best Results:\n")
-    print(max_f1_C)
+    print(max_recall_C)
     print("Accuracy: " + str(mean(metrics[C]["accuracy"])))
-    print("Precision: " + str(mean(metrics[max_f1_C]["precision"])))
-    print("Recall: " + str(mean(metrics[max_f1_C]["recall"])))
-    print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
+    print("Precision: " + str(mean(metrics[max_recall_C]["precision"])))
+    print("Recall: " + str(mean(metrics[max_recall_C]["recall"])))
+    print("F1: " + str(mean(metrics[max_recall_C]["f1"])))
 
 
 if __name__ == "__main__":

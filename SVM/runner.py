@@ -9,7 +9,7 @@ class args:
     trading_days = 7
     kernel = "cobb-douglas"
     degree = 3
-    C = [10 ** i for i in range(-100, 100)]
+    C = [10 ** i for i in range(-15, 3)]
     gamma = 0.1
     coef0 = 0.0
     train_test_ratio = 0.75
@@ -22,7 +22,7 @@ f = open("summary.txt", "w")
 f_csv = open("summary.csv", "w", newline="")
 writer = csv.writer(f_csv)
 writer.writerow(
-    ["degree", "gamma", "C", "training F1", "test F1", "training acc", "test acc"]
+    ["degree", "gamma", "C", "training recall", "test recall", "training acc", "test acc"]
 )
 print("Tuning and results for cobb-douglas: \n")
 degrees = [2, 3, 4, 5, 6, 7, 8, 9]
