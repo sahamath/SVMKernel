@@ -86,7 +86,7 @@ def tuner(args, f, writer):
     # load the dataset
     df = load_csv(path)
     data = prepare_data(data_f=df, horizon=trading_days, alpha=0.9)
-    print(data)
+    # print(data)
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
@@ -123,8 +123,8 @@ def tuner(args, f, writer):
             X_train = rem_inf(X_train)
             X_test = rem_inf(X_test)
 
-            print(np.where(np.isinf(X_train)))
-            print(np.where(np.isinf(X_test)))
+            # print(np.where(np.isinf(X_train)))
+            # print(np.where(np.isinf(X_test)))
 
             if kernel == "custom":
                 clf = make_pipeline(

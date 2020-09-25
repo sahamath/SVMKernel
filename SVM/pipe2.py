@@ -79,6 +79,15 @@ def compute_acc(clf, X_train, y_train, X_test, y_test):
     }
 
 
+def rem_inf(arr):
+    check_for_inf = np.where(np.isinf(arr))
+    if check_for_inf:
+        for i in range(len(check_for_inf[0])):
+            # print((check_for_inf[0][i],check_for_inf[1][i]))
+            arr[check_for_inf[0][i], check_for_inf[1][i]] = 0
+    return arr
+
+
 def trainer(args, f, writer):
 
     path = args.path
@@ -160,10 +169,10 @@ def trainer(args, f, writer):
         # print((y == 1).sum())
         # print((y == 0).sum())
 
-        X_train = X[: int(train_test_ratio * len(X))]
+        X_train = rem_inf(X[: int(train_test_ratio * len(X))])
         y_train = y[: int(train_test_ratio * len(y))]
 
-        X_test = X[int(train_test_ratio * len(X)) :]
+        X_test = rem_inf(X[int(train_test_ratio * len(X)) :])
         y_test = y[int(train_test_ratio * len(y)) :]
 
         if kernel == "custom":
