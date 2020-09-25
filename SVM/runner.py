@@ -22,14 +22,23 @@ f = open("summary.txt", "w")
 f_csv = open("summary.csv", "w", newline="")
 writer = csv.writer(f_csv)
 writer.writerow(
-    ["degree", "gamma", "C", "training recall", "test recall","training F1","test F1" "training acc", "test acc"]
+    [
+        "degree",
+        "gamma",
+        "C",
+        "training recall",
+        "test recall",
+        "training F1",
+        "test F1" "training acc",
+        "test acc",
+    ]
 )
 print("Tuning and results for cobb-douglas: \n")
 degrees = [2, 3, 4, 5, 6, 7, 8, 9]
 # degrees = [2]
 tradingDays = [5]
 kernel = "cobb-douglas"
-gammas = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+gammas = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 # gammas = [0.1]
 print("Lets start this:\n")
 for degree in degrees:

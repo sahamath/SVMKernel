@@ -31,6 +31,15 @@ from preprocess import prepare_data, load_csv
 from tqdm.auto import tqdm
 
 
+def rem_inf(arr):
+    check_for_inf = np.where(np.isinf(arr))
+    if check_for_inf:
+        for i in range(len(check_for_inf[0])):
+            # print((check_for_inf[0][i],check_for_inf[1][i]))
+            arr[check_for_inf[0][i], check_for_inf[1][i]] = 0
+    return arr
+
+
 def tuner(args, f, writer):
     path = args.path
     trading_days = args.trading_days
@@ -102,8 +111,20 @@ def tuner(args, f, writer):
             # print("Fold #" + str(i + 1))
             # print("\n")
 
-            X_train, X_test = X[tr_index], X[val_index]
-            y_train, y_test = y[tr_index], y[val_index]
+            X_train, X_test = (
+                X[tr_index].astype("float64"),
+                X[val_index].astype("float64"),
+            )
+            y_train, y_test = (
+                y[tr_index].astype("float64"),
+                y[val_index].astype("float64"),
+            )
+
+            X_train = rem_inf(X_train)
+            X_test = rem_inf(X_test)
+
+            print(np.where(np.isinf(X_train)))
+            print(np.where(np.isinf(X_test)))
 
             if kernel == "custom":
                 clf = make_pipeline(

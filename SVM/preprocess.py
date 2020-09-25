@@ -32,7 +32,7 @@ def get_exp_preprocessing(data_f, alpha=0.9):
     return edata
 
 
-def feature_extraction(data_arg,horizon):
+def feature_extraction(data_arg, horizon):
     """Extracts the important features necessary for classification"""
     data = data_arg.copy()
     for x in [horizon]:
@@ -49,8 +49,7 @@ def feature_extraction(data_arg,horizon):
         data = ta.trix(data, n=x)
         data = ta.vortex_indicator(data, n=x)
 
-    data["ema"+str(horizon)] = data["Close"] / data["Close"].ewm(horizon).mean()
-    
+    data["ema" + str(horizon)] = data["Close"] / data["Close"].ewm(horizon).mean()
 
     data = ta.macd(data, n_fast=12, n_slow=26)
 
@@ -72,7 +71,7 @@ def compute_prediction_int(df, n):
 def prepare_data(data_f, horizon, alpha=0.9):
     aapl = data_f.copy()
     saapl = get_exp_preprocessing(aapl, alpha)
-    data = feature_extraction(saapl,horizon).dropna().iloc[:-horizon]
+    data = feature_extraction(saapl, horizon).dropna().iloc[:-horizon]
     data["pred"] = compute_prediction_int(data, n=horizon)
     del data["Close"]
     return data.dropna()
