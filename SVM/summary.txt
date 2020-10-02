@@ -1,8 +1,0 @@
-
-
-Best Results of Tuner:
-
-Degree: 2
-C: 0.1
-gamma: 0.1
-Best F1 Score: 0.4721368190191825
