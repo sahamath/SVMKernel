@@ -33,10 +33,15 @@ from tqdm.auto import tqdm
 
 def rem_inf(arr):
     check_for_inf = np.where(np.isinf(arr))
+    check_for_nan = np.where(np.isnan(arr))
     if check_for_inf:
         for i in range(len(check_for_inf[0])):
             # print((check_for_inf[0][i],check_for_inf[1][i]))
             arr[check_for_inf[0][i], check_for_inf[1][i]] = 0
+
+    if check_for_nan:
+        for i in range(len(check_for_nan[0])):
+            arr[check_for_nan[0][i],check_for_nan[1][i]] = 0
     return arr
 
 
