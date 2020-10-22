@@ -1,6 +1,6 @@
 import warnings
 import sys
-
+import pandas as pd
 # sys.stdout = open('output.txt','a')
 warnings.filterwarnings("ignore")
 
@@ -27,7 +27,7 @@ from sklearn.model_selection import TimeSeriesSplit
 from statistics import mean
 
 from preprocess import prepare_data, load_csv
-import pandas as pd
+
 from tqdm.auto import tqdm
 
 
