@@ -1,6 +1,7 @@
 import warnings
 import sys
 import pandas as pd
+
 # sys.stdout = open('output.txt','a')
 warnings.filterwarnings("ignore")
 
@@ -32,14 +33,14 @@ from tqdm.auto import tqdm
 
 
 def rem_inf(arr):
-    #print(arr)
+    # print(arr)
     dataF = pd.DataFrame(arr)
-    #print(dataF)
+    # print(dataF)
     dataF = dataF.replace([np.inf, -np.inf], np.nan)
     dataF = dataF.fillna(0)
-    return (dataF.to_numpy())
-    
-    
+    return dataF.to_numpy()
+
+
 def tuner(args, f, writer):
     path = args.path
     trading_days = args.trading_days

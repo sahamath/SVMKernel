@@ -28,8 +28,11 @@ writer.writerow(
         "C",
         "training recall",
         "test recall",
+        "training precision",
+        "test_precision",
         "training F1",
-        "test F1" "training acc",
+        "test F1",
+        "training acc",
         "test acc",
     ]
 )
