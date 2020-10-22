@@ -91,7 +91,7 @@ def tuner(args, f, writer):
     # remove the output from the input
     features = [x for x in data.columns if x not in ["gain"]]
 
-    dataA = np.array_split(data[features], 1)
+    dataA = np.array_split(data[features], folds)
 
     features = [x for x in data.columns if x not in ["gain", "pred"]]
     X = np.array(dataA[0][features])
