@@ -37,24 +37,9 @@ def rem_inf(arr):
     #print(dataF)
     dataF = dataF.replace([np.inf, -np.inf], np.nan)
     dataF = dataF.fillna(0)
-    
     return (dataF.to_numpy())
     
     
-    #check_for_inf = np.where(np.isinf(arr))
-    #check_for_nan = np.where(np.isnan(arr))
-    #print(check_for_nan[0])
-    #if check_for_inf:
-    #    for i in range(len(check_for_inf[0])):
-            # print((check_for_inf[0][i],check_for_inf[1][i]))
-     #       arr[check_for_inf[0][i], check_for_inf[1][i]] = 0
-
-    #if check_for_nan:
-     #   for i in range(len(check_for_nan[0])):
-     #       arr[check_for_nan[0][i],check_for_nan[1][i]] = 0
-    #return arr
-
-
 def tuner(args, f, writer):
     path = args.path
     trading_days = args.trading_days
@@ -198,24 +183,24 @@ def tuner(args, f, writer):
 
     # print(metrics)
     # print("\n")
-    max_f1_C = list(metrics.keys())[0]
+    max_recall_C = list(metrics.keys())[0]
     for C in metrics:
-        if mean(metrics[C]["f1"]) > mean(metrics[max_f1_C]["f1"]):
-            max_f1_C = C
+        if mean(metrics[C]["recall"]) > mean(metrics[max_recall_C]["recall"]):
+            max_recall_C = C
         # print("\n")
 
     print("Best Results:\n")
-    print(max_f1_C)
-    print("F1: " + str(mean(metrics[max_f1_C]["f1"])))
+    print(max_recall_C)
+    print("Recall: " + str(mean(metrics[max_recall_C]["recall"])))
 
     f.write("\n\nBest Results of Tuner:\n")
     f.write("\nDegree: " + str(args.degree))
-    f.write("\nC: " + str(max_f1_C))
+    f.write("\nC: " + str(max_recall_C))
     f.write("\ngamma: " + str(gamma))
-    f.write("\nBest F1 Score: " + str(mean(metrics[max_f1_C]["f1"])))
+    f.write("\nBest Recall Score: " + str(mean(metrics[max_recall_C]["recall"])))
 
     args1 = args
-    args1.currC = max_f1_C
+    args1.currC = max_recall_C
     trainer(args1, f, writer)
 
 
