@@ -107,7 +107,7 @@ def tuner(args, f, writer):
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
         i = 0
 
-        for i in tqdm(range(no_of_subsamples)):
+        for i in tqdm(range(args.no_of_subsamples)):
             features = [x for x in data.columns if x not in ["gain", "pred"]]
             X = dataA[i][features]
             y = dataA[i]["pred"]
