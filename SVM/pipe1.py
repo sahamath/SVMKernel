@@ -97,7 +97,7 @@ def tuner(args, f, writer):
     X = np.array(dataA[0][features])
     y = np.array(dataA[0]["pred"])
 
-    tscv = TimeSeriesSplit(n_splits=folds)
+    #tscv = TimeSeriesSplit(n_splits=folds)
     param_grid = {"svc__C": C}
 
     # print("\n")
@@ -107,19 +107,19 @@ def tuner(args, f, writer):
         metrics[C] = {"accuracy": [], "precision": [], "recall": [], "f1": []}
         i = 0
 
-        for tr_index, val_index in tscv.split(X):
-
+        for i in tqdm(range(no_of_subsamples)):
+            features = [x for x in data.columns if x not in ["gain", "pred"]]
+            X = dataA[i][features]
+            y = dataA[i]["pred"]
             # print("Fold #" + str(i + 1))
             # print("\n")
 
-            X_train, X_test = (
-                X[tr_index].astype("float64"),
-                X[val_index].astype("float64"),
-            )
-            y_train, y_test = (
-                y[tr_index].astype("float64"),
-                y[val_index].astype("float64"),
-            )
+            X_train = X[: int(train_test_ratio * len(X))]
+            y_train = y[: int(train_test_ratio * len(y))]
+
+            X_test = X[int(train_test_ratio * len(X)) :]
+            y_test = y[int(train_test_ratio * len(y)) :]
+
 
             X_train = rem_inf(X_train)
             X_test = rem_inf(X_test)
